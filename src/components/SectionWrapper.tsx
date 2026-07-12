@@ -1,24 +1,29 @@
 import { cn } from "@/lib/utils";
 
-interface SectionWrapperProps {
+type SectionWrapperProps = {
   children: React.ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
-}
+  as?: "section" | "div" | "header" | "footer";
+};
 
 export function SectionWrapper({
   children,
   className,
-  as: Component = "section",
+  as = "section",
 }: SectionWrapperProps) {
-  return (
-    <Component
-      className={cn(
-        "mx-auto w-full max-w-5xl px-4 py-16 md:py-24",
-        className
-      )}
-    >
-      {children}
-    </Component>
+  const classes = cn(
+    "mx-auto w-full max-w-5xl px-4 py-16 md:py-24",
+    className
   );
+
+  if (as === "div") {
+    return <div className={classes}>{children}</div>;
+  }
+  if (as === "header") {
+    return <header className={classes}>{children}</header>;
+  }
+  if (as === "footer") {
+    return <footer className={classes}>{children}</footer>;
+  }
+  return <section className={classes}>{children}</section>;
 }
