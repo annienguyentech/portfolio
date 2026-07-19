@@ -29,7 +29,8 @@ const education = [
     school: "Gonzaga University",
     location: "Spokane, WA",
     degree:
-      "Bachelor of Business Administration in Business Analytics, Minor in Economics",
+      "Dual degree — B.B.A. in Business Analytics & B.S. in Economics; Minor in Leadership Studies",
+
     period: "August 2023 – December 2027",
     details: [
       "Relevant coursework: Database Management, Data Analytics for Business, Regression Analysis, Management Information Systems, Problem Solving & Programming, Calculus III.",
@@ -54,10 +55,12 @@ function AboutPage() {
           Hi, I'm Annie.
         </h1>
         <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          I'm a Business Analytics and Economics student at Gonzaga University
-          who enjoys turning messy data into clear stories that help teams
-          make better decisions.
+          I'm a dual-degree student in Business Analytics and Economics at
+          Gonzaga University, with a minor in Leadership Studies, who enjoys
+          turning messy data into clear stories that help teams make better
+          decisions.
         </p>
+
       </header>
 
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
