@@ -6,10 +6,10 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Alex Chen — Data & Business Analyst" },
-      { name: "description", content: "Personal portfolio of Alex Chen, a Data Analyst and Business Analyst." },
-      { property: "og:title", content: "Alex Chen — Data & Business Analyst" },
-      { property: "og:description", content: "Personal portfolio showcasing data analysis projects, business analysis experience, and leadership." },
+      { title: "Annie Nguyen — Data & Business Analyst" },
+      { name: "description", content: "Personal portfolio of Annie Nguyen, a Business Analytics & Economics student and aspiring Data / Business Analyst." },
+      { property: "og:title", content: "Annie Nguyen — Data & Business Analyst" },
+      { property: "og:description", content: "Portfolio showcasing analytics projects, business analyst internships, and leadership experience." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -25,11 +25,12 @@ function Index() {
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-medium text-navy-500">Data Analyst · Business Analyst</p>
             <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
-              Alex Chen
+              Annie Nguyen
             </h1>
             <p className="mb-8 text-lg leading-relaxed text-navy-50/80 md:text-xl">
-              I turn messy data into clear decisions. I specialize in SQL, Python, Tableau, and
-              cross-functional business analysis that helps teams move faster and ship smarter.
+              Business Analytics & Economics student at Gonzaga University. I use SQL, Python,
+              Power BI, and Tableau to turn messy data into decisions that move revenue, cut
+              costs, and sharpen strategy.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -98,22 +99,22 @@ function Index() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <ProjectPreview
-              title="Customer Churn Prediction"
-              description="Built a logistic regression model in Python to identify at-risk customers and recommend retention actions."
-              tags={["Python", "scikit-learn", "SQL"]}
-              outcome="Reduced churn by 12% in the pilot segment."
+              title="Marketing Campaign Response Prediction"
+              description="Supervised machine learning model in Python predicting customer purchase likelihood using feature engineering and validation."
+              tags={["Python", "Machine Learning", "Feature Engineering"]}
+              outcome="82% prediction accuracy across 3 high-potential segments."
             />
             <ProjectPreview
-              title="Sales Dashboard"
-              description="Designed an interactive Tableau dashboard tracking revenue, pipeline, and rep performance."
-              tags={["Tableau", "SQL", "ETL"]}
-              outcome="Cut reporting time from 3 days to 30 minutes."
+              title="Sales Optimization Analysis"
+              description="Built a relational sales database and analyzed holiday ticket data for an airline agency to spot route-level demand gaps."
+              tags={["SQL", "ERD", "Data Modeling"]}
+              outcome="Recommendations contributed to a 15% profitability increase."
             />
             <ProjectPreview
-              title="Pricing Analysis"
-              description="Analyzed historical pricing data and competitor benchmarks to inform a new tiered pricing strategy."
-              tags={["Excel", "Python", "Statistics"]}
-              outcome="Identified 8% revenue uplift opportunity."
+              title="Lead Scoring System"
+              description="Designed a SQL-based lead scoring model on 1,000+ client records to prioritize qualified leads for the sales team."
+              tags={["SQL Server", "Power BI", "Analytics"]}
+              outcome="Reduced customer acquisition cost by 20%."
             />
           </div>
           <div className="mt-8 md:hidden">
