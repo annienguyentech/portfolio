@@ -6,10 +6,10 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Alex Chen" },
-      { name: "description", content: "Contact Alex Chen for data analyst and business analyst opportunities." },
-      { property: "og:title", content: "Contact — Alex Chen" },
-      { property: "og:description", content: "Contact Alex Chen for data analyst and business analyst opportunities." },
+      { title: "Contact — Annie Nguyen" },
+      { name: "description", content: "Contact Annie Nguyen for data analyst and business analyst opportunities." },
+      { property: "og:title", content: "Contact — Annie Nguyen" },
+      { property: "og:description", content: "Contact Annie Nguyen for data analyst and business analyst opportunities." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -18,20 +18,20 @@ export const Route = createFileRoute("/contact")({
 
 const skillGroups = [
   {
-    title: "Data Analysis",
-    skills: ["SQL", "Python", "Pandas", "NumPy", "Statistical Testing", "A/B Testing"],
+    title: "Programming & Databases",
+    skills: ["SQL", "Python", "R", "HTML"],
   },
   {
-    title: "Visualization",
-    skills: ["Tableau", "Power BI", "Matplotlib", "Seaborn", "Excel Charts", "Dashboard Design"],
+    title: "Analytics & Visualization",
+    skills: ["Excel (VLOOKUP, PivotTables, Power Query)", "Tableau", "Power BI"],
   },
   {
-    title: "Business Analysis",
-    skills: ["Requirements Gathering", "Process Mapping", "Stakeholder Management", "User Stories", "Jira", "Confluence"],
+    title: "Business & AI Tools",
+    skills: ["Microsoft 365 (PowerPoint, Visio, Project)", "GitHub", "Copilot", "NotebookLM"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Git", "dbt", "Snowflake", "BigQuery", "Excel", "Google Sheets", "Jupyter"],
+    title: "Coursework Highlights",
+    skills: ["Database Management", "Data Analytics for Business", "Regression Analysis", "MIS", "Problem Solving & Programming", "Calculus III"],
   },
 ];
 
@@ -39,20 +39,20 @@ const contactLinks = [
   {
     icon: <Mail className="h-4 w-4" />,
     label: "Email",
-    value: "alex.chen@example.com",
-    href: "mailto:alex.chen@example.com",
+    value: "annienguyengu@gmail.com",
+    href: "mailto:annienguyengu@gmail.com",
   },
   {
     icon: <Linkedin className="h-4 w-4" />,
     label: "LinkedIn",
-    value: "linkedin.com/in/alexchen",
-    href: "https://linkedin.com/in/alexchen",
+    value: "linkedin.com/in/annienguyen",
+    href: "https://linkedin.com/in/annienguyen",
   },
   {
     icon: <Github className="h-4 w-4" />,
     label: "GitHub",
-    value: "github.com/alexchen",
-    href: "https://github.com/alexchen",
+    value: "github.com/annienguyen",
+    href: "https://github.com/annienguyen",
   },
 ];
 
@@ -114,7 +114,7 @@ function ContactPage() {
               </div>
               <div>
                 <p className="text-xs text-muted-foreground">Location</p>
-                <p className="text-sm font-medium text-card-foreground">San Francisco, CA (Open to remote)</p>
+                <p className="text-sm font-medium text-card-foreground">Spokane, WA (Open to relocation & remote)</p>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ function ContactPage() {
           <div className="mt-8 rounded-lg bg-muted/30 p-6">
             <h3 className="mb-2 text-sm font-semibold text-foreground">Availability</h3>
             <p className="text-sm text-muted-foreground">
-              I am currently open to full-time Data Analyst and Business Analyst roles, as well as freelance analytics projects. I typically respond within 24 hours.
+              I'm a Business Analytics & Economics student at Gonzaga University (graduating December 2027), actively seeking Data Analyst and Business Analyst internships and new-grad roles. I typically respond within 24 hours.
             </p>
           </div>
         </div>

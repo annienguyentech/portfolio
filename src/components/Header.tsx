@@ -20,7 +20,7 @@ export function Header() {
           to="/"
           className="text-sm font-bold tracking-tight text-foreground hover:text-primary"
         >
-          Alex Chen
+          Annie Nguyen
         </Link>
 
         {/* Desktop nav */}

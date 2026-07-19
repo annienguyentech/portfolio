@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Alex Chen — Data & Business Analyst" },
-      { name: "description", content: "Personal portfolio of Alex Chen, a Data Analyst and Business Analyst specializing in SQL, Python, Tableau, and data-driven decision making." },
-      { name: "author", content: "Alex Chen" },
-      { property: "og:title", content: "Alex Chen — Data & Business Analyst" },
-      { property: "og:description", content: "Personal portfolio showcasing data analysis projects, business analysis experience, and leadership." },
+      { title: "Annie Nguyen — Data & Business Analyst" },
+      { name: "description", content: "Personal portfolio of Annie Nguyen, a Business Analytics & Economics student at Gonzaga University with experience in SQL, Python, Power BI, and Tableau." },
+      { name: "author", content: "Annie Nguyen" },
+      { property: "og:title", content: "Annie Nguyen — Data & Business Analyst" },
+      { property: "og:description", content: "Portfolio showcasing analytics projects, business analyst internships, and leadership experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@alexchen" },
+      { name: "twitter:site", content: "@annienguyen" },
     ],
     links: [
       {

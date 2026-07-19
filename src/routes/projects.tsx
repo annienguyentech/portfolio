@@ -6,10 +6,10 @@ export const Route = createFileRoute("/projects")({
   component: ProjectsPage,
   head: () => ({
     meta: [
-      { title: "Projects — Alex Chen" },
-      { name: "description", content: "Selected data analysis and business analysis projects by Alex Chen." },
-      { property: "og:title", content: "Projects — Alex Chen" },
-      { property: "og:description", content: "Selected data analysis and business analysis projects by Alex Chen." },
+      { title: "Projects — Annie Nguyen" },
+      { name: "description", content: "Selected data analysis and business analysis projects by Annie Nguyen." },
+      { property: "og:title", content: "Projects — Annie Nguyen" },
+      { property: "og:description", content: "Selected data analysis and business analysis projects by Annie Nguyen." },
       { property: "og:url", content: "/projects" },
     ],
     links: [{ rel: "canonical", href: "/projects" }],
@@ -18,51 +18,51 @@ export const Route = createFileRoute("/projects")({
 
 const projects = [
   {
-    title: "Customer Churn Prediction",
+    title: "Marketing Campaign Response Prediction",
     description:
-      "Built and deployed a logistic regression model in Python to identify at-risk SaaS customers. Combined behavioral features, billing history, and support tickets to score risk weekly.",
-    tags: ["Python", "scikit-learn", "SQL", "Pandas"],
-    outcome: "Reduced churn by 12% in the pilot segment and saved an estimated $180K ARR.",
+      "Developed a supervised machine learning model in Python to predict customer purchase likelihood, using feature engineering and model validation techniques. Analyzed campaign response patterns to identify high-potential customer segments.",
+    tags: ["Python", "Machine Learning", "Feature Engineering", "Segmentation"],
+    outcome: "Achieved 82% accuracy and surfaced 3 high-potential customer segments for targeted marketing.",
     link: "https://github.com",
   },
   {
-    title: "Sales Performance Dashboard",
+    title: "Sales Optimization Analysis",
     description:
-      "Designed an interactive Tableau dashboard that tracks revenue, pipeline health, and rep-level performance. Automated data refreshes from the data warehouse.",
-    tags: ["Tableau", "SQL", "dbt", "ETL"],
-    outcome: "Cut monthly reporting time from 3 days to 30 minutes.",
+      "Built a relational sales database for an airline agency by cleaning transaction data and designing an entity relationship diagram (ERD). Analyzed 10+ holiday ticket sales datasets with SQL to identify route-level demand and capacity gaps.",
+    tags: ["SQL", "ERD", "Data Modeling", "Reporting"],
+    outcome: "Recommended targeted coupons for underfilled routes, contributing to a 15% increase in profitability.",
     link: "https://github.com",
   },
   {
-    title: "Pricing Strategy Analysis",
+    title: "KPI Dashboard for SEO Investment",
     description:
-      "Analyzed historical pricing, discounting, and competitor benchmarks to inform a new tiered pricing structure for the enterprise product.",
-    tags: ["Excel", "Python", "Statistics", "A/B Testing"],
-    outcome: "Identified an 8% revenue uplift opportunity and informed three new pricing tiers.",
+      "Constructed an interactive KPI dashboard in Power BI and Python for the finance team at Credential Network, tracking profit margin and ROI metrics to inform SEO tool investment decisions.",
+    tags: ["Power BI", "Python", "KPI", "Finance"],
+    outcome: "Informed investment decisions that contributed to a 10% increase in monthly revenue.",
     link: "https://github.com",
   },
   {
-    title: "Supply Chain Demand Forecasting",
+    title: "Lead Scoring System",
     description:
-      "Created a time-series forecasting model to predict weekly SKU demand and reduce stockouts. Integrated seasonality and promotional effects.",
-    tags: ["Python", "Prophet", "Time Series", "SQL"],
-    outcome: "Reduced stockouts by 15% and excess inventory by 10%.",
+      "Built a lead scoring system on 1,000+ client records stored in SQL Server to help the sales team prioritize qualified leads and improve conversion-rate calculation accuracy.",
+    tags: ["SQL Server", "Analytics", "Sales Ops"],
+    outcome: "Reduced customer acquisition cost by 20%.",
     link: "https://github.com",
   },
   {
-    title: "Customer Segmentation",
+    title: "Marketing Performance Dashboard",
     description:
-      "Ran K-means clustering on customer transaction data to segment users by value and behavior for targeted marketing campaigns.",
-    tags: ["Python", "Clustering", "Pandas", "Matplotlib"],
-    outcome: "Improved campaign conversion rates by 22% in the highest-value segment.",
+      "Interpreted and visualized 30+ Excel datasets in Power BI and Python at Stanza to monitor monthly marketing spend and lead generation rate, supporting social media campaign investment decisions.",
+    tags: ["Power BI", "Python", "Excel", "Marketing Analytics"],
+    outcome: "Enabled data-driven social media investment across 4 sprint cycles.",
     link: "https://github.com",
   },
   {
-    title: "Process Mapping & Automation",
+    title: "Loan Performance Reporting Automation",
     description:
-      "Mapped the monthly close reporting process, identified bottlenecks, and automated manual handoffs with Excel and SQL scripts.",
-    tags: ["Business Analysis", "Process Mapping", "SQL", "Excel"],
-    outcome: "Reduced close reporting effort by 20 hours per month.",
+      "Optimized business loan performance reporting at MSB Bank by designing SQL queries to integrate 40+ datasets and building Excel dashboards that tracked loan utilization across 100,000+ credit users.",
+    tags: ["SQL", "Excel", "Banking", "Reporting"],
+    outcome: "Cut manual reporting effort by 30%.",
     link: "https://github.com",
   },
 ];
