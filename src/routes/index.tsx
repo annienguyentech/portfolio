@@ -6,11 +6,9 @@ import {
   BarChart3,
   BriefcaseBusiness,
   Database,
-  FileText,
   LineChart,
   Mail,
   MapPin,
-  Sparkles,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -23,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Annie Nguyen, a Business Analytics and Economics student with experience in SQL, Python, Power BI, Excel, machine learning, and business intelligence.",
+          "Portfolio of Annie Nguyen, a Business Analytics and Economics student specializing in SQL, Python, Power BI, Excel, machine learning, and business intelligence.",
       },
       {
         property: "og:title",
@@ -32,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Explore Annie Nguyen's experience and projects in data analytics, business analysis, business intelligence, and machine learning.",
+          "Explore Annie Nguyen's experience and projects in data analytics, business analysis, and business intelligence.",
       },
       {
         property: "og:url",
@@ -48,61 +46,64 @@ export const Route = createFileRoute("/")({
   }),
 });
 
+const skills = [
+  "SQL",
+  "Python",
+  "Power BI",
+  "Excel",
+  "Tableau",
+  "Machine Learning",
+];
+
 const strengths = [
   {
     icon: <Database className="h-5 w-5" />,
     title: "Data Analysis",
     description:
-      "Clean, transform, query, and analyze structured data using SQL, Python, Excel, and statistical techniques.",
+      "Clean, transform, query, and analyze data using SQL, Python, Excel, and statistical methods.",
   },
   {
     icon: <LineChart className="h-5 w-5" />,
     title: "Business Intelligence",
     description:
-      "Build interactive Power BI and Excel dashboards that connect performance metrics with business decisions.",
+      "Build clear Power BI and Excel dashboards that help teams understand performance and make decisions.",
   },
   {
     icon: <BriefcaseBusiness className="h-5 w-5" />,
     title: "Business Analysis",
     description:
-      "Translate stakeholder needs into clear requirements, analytical solutions, process improvements, and recommendations.",
+      "Translate stakeholder needs into requirements, analytical solutions, and practical recommendations.",
   },
 ];
 
 const featuredProjects = [
   {
     slug: "revenue-plan-progress-analysis",
+    category: "Power BI",
     title: "Revenue Plan Progress Analysis",
-    category: "Business Intelligence",
     description:
-      "Developed an interactive Power BI dashboard to compare actual and planned revenue across stores, products, customers, and promotions.",
+      "An interactive dashboard comparing actual and planned revenue across stores, products, customers, and promotions.",
     tags: ["Power BI", "DAX", "Power Query"],
-    outcome:
-      "Created four analytical pages for monitoring revenue performance and plan completion.",
   },
   {
     slug: "sales-optimization-analysis",
+    category: "SQL",
     title: "Sales Optimization Analysis",
-    category: "SQL and Database Analysis",
     description:
-      "Designed a relational airline sales database and used SQL to examine route demand, capacity utilization, ticket activity, and promotion performance.",
+      "A relational airline sales database used to analyze route demand, capacity utilization, and promotion performance.",
     tags: ["SQL", "ERD", "Data Modeling"],
-    outcome:
-      "Identified underfilled routes and proposed targeted coupon strategies.",
   },
   {
     slug: "marketing-campaign-response-prediction",
-    title: "Marketing Campaign Response Prediction",
     category: "Machine Learning",
+    title: "Marketing Campaign Response Prediction",
     description:
-      "Built a classification model using customer demographics, spending behavior, and campaign data to predict customer response probability.",
+      "A Python classification model that estimates customer campaign response and supports targeted marketing.",
     tags: ["Python", "Scikit-learn", "Logistic Regression"],
-    outcome:
-      "Created a customer-ranking process for more focused marketing outreach.",
   },
 ];
 
-const statistics = [
+const highlights = [
   {
     value: "40+",
     label: "Datasets integrated",
@@ -115,61 +116,63 @@ const statistics = [
     value: "50%+",
     label: "Reporting time reduced",
   },
-  {
-    value: "1,000+",
-    label: "Client records analyzed",
-  },
 ];
 
 function Index() {
   return (
     <>
-      <section className="hero-surface border-b border-border">
+      <section className="border-b border-border bg-background">
         <SectionWrapper className="py-16 md:py-24">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="max-w-3xl">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur">
-                <Sparkles className="h-4 w-4" />
-                Data Analyst | Business Analyst
-              </div>
+              <p className="eyebrow mb-5">
+                Data Analyst and Business Analyst
+              </p>
 
-              <h1 className="mb-5 text-4xl font-extrabold tracking-tight text-foreground md:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-6xl">
                 Annie Nguyen
               </h1>
 
-              <p className="mb-5 max-w-2xl text-xl font-semibold leading-relaxed text-foreground md:text-2xl">
-                Turning complex data into clear business decisions.
+              <p className="mt-6 max-w-2xl text-xl font-medium leading-relaxed text-foreground md:text-2xl">
+                Turning data into clear insights and practical business
+                decisions.
               </p>
 
-              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 I am a Business Analytics and Economics student at Gonzaga
                 University with experience in data analytics, business
-                consulting, financial analysis, product development, and
-                dashboard design. I use SQL, Python, Power BI, and Excel to
-                improve reporting, identify opportunities, and communicate
-                actionable insights.
+                consulting, financial analysis, and dashboard development. I
+                use SQL, Python, Power BI, and Excel to improve reporting,
+                identify opportunities, and support better decisions.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-muted-foreground">
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-2">
                   <MapPin className="h-4 w-4 text-primary" />
                   Spokane, Washington
                 </span>
 
                 <span className="inline-flex items-center gap-2">
-                  <BarChart3 className="h-4 w-4 text-primary" />
-                  Business Analytics and Economics
+                  <BriefcaseBusiness className="h-4 w-4 text-primary" />
+                  Open to analytics opportunities
                 </span>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-7 flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span key={skill} className="tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/projects" className="btn-primary">
-                  View My Projects
+                  View Projects
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
                 <Link to="/experience" className="btn-secondary">
-                  <FileText className="h-4 w-4" />
                   View Experience
                 </Link>
 
@@ -181,81 +184,29 @@ function Index() {
             </div>
 
             <div className="mx-auto w-full max-w-sm">
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/15 to-accent/50 blur-2xl" />
-
-                <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white p-3 shadow-2xl">
-                  <img
-                    src="/profile-pic.png"
-                    alt="Professional portrait of Annie Nguyen"
-                    className="aspect-square w-full rounded-2xl object-cover"
-                  />
-                </div>
-
-                <div className="absolute -bottom-5 left-1/2 w-[88%] -translate-x-1/2 rounded-xl border border-border bg-white/95 px-5 py-4 shadow-lg backdrop-blur">
-                  <p className="text-sm font-bold text-foreground">
-                    Open to Data and Business Analyst Opportunities
-                  </p>
-
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    Analytics, business intelligence, and reporting
-                  </p>
-                </div>
+              <div className="overflow-hidden rounded-xl border border-border bg-card p-2 shadow-sm">
+                <img
+                  src="/profile-pic.png"
+                  alt="Professional portrait of Annie Nguyen"
+                  className="aspect-square w-full rounded-lg object-cover"
+                />
               </div>
             </div>
           </div>
         </SectionWrapper>
       </section>
 
-      <SectionWrapper>
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-wider text-primary">
-              About Me
-            </p>
-
-            <h2 className="text-3xl font-bold text-foreground md:text-4xl">
-              Analytical thinking with a business perspective
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-muted-foreground">
-            <p className="leading-relaxed">
-              My experience spans business consulting, financial analysis,
-              product development, marketing analytics, student support, and
-              community engagement. I enjoy working between technical and
-              business teams to make information easier to understand and use.
-            </p>
-
-            <p className="leading-relaxed">
-              Across my internships and projects, I have developed dashboards,
-              written SQL reporting processes, analyzed large datasets,
-              supported product requirements, and translated findings into
-              practical recommendations.
-            </p>
-
-            <Link to="/experience" className="text-link">
-              Explore my professional experience
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      <section className="border-y border-border bg-white">
-        <SectionWrapper className="py-12">
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {statistics.map((statistic) => (
-              <div
-                key={statistic.label}
-                className="rounded-xl border border-border bg-muted/30 p-5 text-center"
-              >
-                <p className="text-3xl font-extrabold text-primary">
-                  {statistic.value}
+      <section className="border-b border-border bg-muted/40">
+        <SectionWrapper className="py-8">
+          <div className="grid gap-5 sm:grid-cols-3">
+            {highlights.map((highlight) => (
+              <div key={highlight.label}>
+                <p className="text-2xl font-bold text-foreground">
+                  {highlight.value}
                 </p>
 
-                <p className="mt-2 text-sm font-medium text-muted-foreground">
-                  {statistic.label}
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {highlight.label}
                 </p>
               </div>
             ))}
@@ -263,25 +214,55 @@ function Index() {
         </SectionWrapper>
       </section>
 
-      <section className="bg-muted/30">
-        <SectionWrapper>
-          <div className="mb-12">
-            <p className="mb-3 text-sm font-bold uppercase tracking-wider text-primary">
-              Core Capabilities
+      <SectionWrapper>
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="eyebrow mb-4">About Me</p>
+
+            <h2 className="text-3xl font-bold text-foreground">
+              Analytical skills with a strong business perspective
+            </h2>
+          </div>
+
+          <div className="space-y-4 text-muted-foreground">
+            <p>
+              My experience includes business consulting, financial analysis,
+              product development, marketing analytics, and reporting. I enjoy
+              working between technical and business teams to make information
+              easier to understand and use.
             </p>
 
-            <h2 className="mb-3 text-3xl font-bold text-foreground">
-              How I create value
+            <p>
+              Across my internships and projects, I have developed dashboards,
+              written SQL queries, analyzed large datasets, supported product
+              requirements, and translated findings into practical
+              recommendations.
+            </p>
+
+            <Link to="/experience" className="text-link">
+              Read about my experience
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      <section className="border-y border-border bg-muted/40">
+        <SectionWrapper>
+          <div className="mb-10">
+            <p className="eyebrow mb-4">Core Capabilities</p>
+
+            <h2 className="text-3xl font-bold text-foreground">
+              What I bring to a team
             </h2>
 
-            <p className="max-w-3xl leading-relaxed text-muted-foreground">
-              I combine analytical tools, business understanding, and clear
-              communication to help teams move from raw information to informed
-              action.
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              A combination of technical analysis, business understanding, and
+              clear communication.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {strengths.map((strength) => (
               <StrengthCard
                 key={strength.title}
@@ -295,19 +276,17 @@ function Index() {
       </section>
 
       <SectionWrapper>
-        <div className="mb-12 flex items-end justify-between gap-6">
+        <div className="mb-10 flex items-end justify-between gap-6">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-wider text-primary">
-              Selected Work
-            </p>
+            <p className="eyebrow mb-4">Selected Work</p>
 
-            <h2 className="mb-3 text-3xl font-bold text-foreground">
+            <h2 className="text-3xl font-bold text-foreground">
               Featured Projects
             </h2>
 
-            <p className="max-w-2xl leading-relaxed text-muted-foreground">
-              Selected projects demonstrating my work in business intelligence,
-              SQL, data visualization, database analysis, and machine learning.
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              Projects covering business intelligence, database analysis, data
+              visualization, and machine learning.
             </p>
           </div>
 
@@ -320,7 +299,7 @@ function Index() {
           </Link>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-3">
           {featuredProjects.map((project) => (
             <Link
               key={project.slug}
@@ -328,33 +307,29 @@ function Index() {
               params={{ slug: project.slug }}
               className="group block h-full"
             >
-              <article className="portfolio-card flex h-full flex-col p-6">
-                <p className="mb-3 text-xs font-bold uppercase tracking-wider text-primary">
+              <article className="content-card flex h-full flex-col p-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">
                   {project.category}
                 </p>
 
-                <h3 className="text-xl font-bold text-card-foreground transition-colors group-hover:text-primary">
+                <h3 className="mt-3 text-xl font-semibold text-card-foreground group-hover:text-primary">
                   {project.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {project.description}
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="skill-tag">
+                    <span key={tag} className="tag">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="result-box mt-5">
-                  {project.outcome}
-                </div>
-
-                <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-bold text-primary">
-                  View project details
+                <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-primary">
+                  View project
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </article>
@@ -362,7 +337,7 @@ function Index() {
           ))}
         </div>
 
-        <div className="mt-8 md:hidden">
+        <div className="mt-7 md:hidden">
           <Link to="/projects" className="text-link">
             View all projects
             <ArrowRight className="h-4 w-4" />
@@ -370,29 +345,21 @@ function Index() {
         </div>
       </SectionWrapper>
 
-      <section className="border-t border-border bg-navy-900 text-white">
-        <SectionWrapper className="py-14 md:py-16">
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+      <section className="border-t border-border bg-muted/40">
+        <SectionWrapper className="py-14">
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-wider text-blue-200">
-                Let us connect
-              </p>
-
-              <h2 className="text-2xl font-bold text-white md:text-3xl">
+              <h2 className="text-2xl font-bold text-foreground">
                 Interested in working together?
               </h2>
 
-              <p className="mt-3 max-w-2xl leading-relaxed text-white/75">
-                I am seeking opportunities where I can apply analytics,
-                business intelligence, and problem-solving skills to meaningful
-                business challenges.
+              <p className="mt-2 max-w-2xl text-muted-foreground">
+                I am seeking opportunities in data analytics, business
+                intelligence, and business analysis.
               </p>
             </div>
 
-            <Link
-              to="/contact"
-              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-navy-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
-            >
+            <Link to="/contact" className="btn-primary shrink-0">
               <Mail className="h-4 w-4" />
               Contact Me
             </Link>
@@ -413,16 +380,16 @@ function StrengthCard({
   description: string;
 }) {
   return (
-    <article className="portfolio-card p-6">
-      <div className="icon-box mb-5">
+    <article className="content-card p-6">
+      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
         {icon}
       </div>
 
-      <h3 className="mb-3 text-lg font-bold text-card-foreground">
+      <h3 className="text-lg font-semibold text-card-foreground">
         {title}
       </h3>
 
-      <p className="text-sm leading-relaxed text-muted-foreground">
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {description}
       </p>
     </article>
