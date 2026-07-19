@@ -26,14 +26,14 @@ const contactLinks = [
   {
     icon: <Linkedin className="h-4 w-4" />,
     label: "LinkedIn",
-    value: "linkedin.com/in/annienguyen",
-    href: "https://linkedin.com/in/annienguyen",
+    value: "linkedin.com/in/minh-thu-annie-nguyen",
+    href: "https://www.linkedin.com/in/minh-thu-annie-nguyen/",
   },
   {
     icon: <Github className="h-4 w-4" />,
     label: "GitHub",
-    value: "github.com/annienguyen",
-    href: "https://github.com/annienguyen",
+    value: "github.com/annienguyentech",
+    href: "https://github.com/annienguyentech",
   },
 ];
 
