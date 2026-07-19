@@ -6,10 +6,10 @@ export const Route = createFileRoute("/leadership")({
   component: LeadershipPage,
   head: () => ({
     meta: [
-      { title: "Leadership — Alex Chen" },
-      { name: "description", content: "Leadership, mentoring, and cross-functional collaboration examples from Alex Chen." },
-      { property: "og:title", content: "Leadership — Alex Chen" },
-      { property: "og:description", content: "Leadership, mentoring, and cross-functional collaboration examples from Alex Chen." },
+      { title: "Leadership — Annie Nguyen" },
+      { name: "description", content: "Leadership, mentoring, and community engagement experience from Annie Nguyen." },
+      { property: "og:title", content: "Leadership — Annie Nguyen" },
+      { property: "og:description", content: "Leadership, mentoring, and community engagement experience from Annie Nguyen." },
       { property: "og:url", content: "/leadership" },
     ],
     links: [{ rel: "canonical", href: "/leadership" }],
@@ -18,25 +18,25 @@ export const Route = createFileRoute("/leadership")({
 
 const leadershipExamples = [
   {
-    icon: <Users className="h-5 w-5" />,
-    title: "Mentoring Junior Analysts",
+    icon: <Lightbulb className="h-5 w-5" />,
+    title: "Peer Academic Coach",
     description:
-      "Mentored two junior analysts at Northwind Analytics, creating a structured onboarding curriculum covering SQL, Python, Tableau, and statistical fundamentals. Both analysts were promoted within 18 months.",
-    outcome: "100% promotion rate for mentees within 18 months.",
+      "Center for Student Academic Success, Gonzaga University (Jan 2024 — Present). Led 8+ academic workshops and 60+ one-on-one coaching sessions to help students improve their performance and study habits.",
+    outcome: "Improved study habits and course outcomes for 60+ Gonzaga students.",
   },
   {
-    icon: <Lightbulb className="h-5 w-5" />,
-    title: "Analytics Guild Founder",
+    icon: <Users className="h-5 w-5" />,
+    title: "Head of Event Coordinator",
     description:
-      "Founded a cross-company analytics guild to share best practices, code snippets, and dashboard templates. Hosted monthly lunch-and-learns and built a shared knowledge repository.",
-    outcome: "Grew to 30+ members and reduced duplicate analysis across teams.",
+      "Vietnamese Student Association (Aug 2024 — May 2025). Coordinated 3+ cultural events end-to-end, managing logistics and building campus partnerships to strengthen community engagement.",
+    outcome: "Delivered 3+ cultural events that strengthened campus community engagement.",
   },
   {
     icon: <Target className="h-5 w-5" />,
-    title: "Churn Initiative Lead",
+    title: "Academic Excellence & Honors",
     description:
-      "Led a six-month, cross-functional initiative to reduce customer churn. Coordinated data science, marketing, customer success, and engineering to define risk scoring, intervention workflows, and success metrics.",
-    outcome: "Reduced churn by 12% and generated an estimated $180K ARR in retained revenue.",
+      "Awarded the Academic Excellence Scholarship at Gonzaga University and named to the President's List and Dean's List every year from 2023 through 2026 while pursuing a dual Business Analytics and Economics degree.",
+    outcome: "3.7 GPA · President's List & Dean's List, 2023–2026.",
   },
 ];
 

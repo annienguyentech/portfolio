@@ -6,10 +6,10 @@ export const Route = createFileRoute("/experience")({
   component: ExperiencePage,
   head: () => ({
     meta: [
-      { title: "Experience — Alex Chen" },
-      { name: "description", content: "Work experience and career history of Alex Chen, Data Analyst and Business Analyst." },
-      { property: "og:title", content: "Experience — Alex Chen" },
-      { property: "og:description", content: "Work experience and career history of Alex Chen, Data Analyst and Business Analyst." },
+      { title: "Experience — Annie Nguyen" },
+      { name: "description", content: "Work experience and internships of Annie Nguyen across business consulting, product analytics, and banking." },
+      { property: "og:title", content: "Experience — Annie Nguyen" },
+      { property: "og:description", content: "Work experience and internships of Annie Nguyen across business consulting, product analytics, and banking." },
       { property: "og:url", content: "/experience" },
     ],
     links: [{ rel: "canonical", href: "/experience" }],
@@ -18,33 +18,30 @@ export const Route = createFileRoute("/experience")({
 
 const experiences = [
   {
-    company: "Northwind Analytics",
-    role: "Senior Data Analyst",
-    period: "2022 — Present",
+    company: "Credential Network — Spokane, WA",
+    role: "Business Consultant",
+    period: "Sep 2025 — Dec 2025",
     achievements: [
-      "Led a cross-functional churn reduction initiative that decreased customer churn by 12% using Python, SQL, and logistic regression.",
-      "Built automated Tableau dashboards adopted by Sales, Finance, and Customer Success, cutting manual reporting time by 90%.",
-      "Mentored two junior analysts on SQL, statistical testing, and dashboard design.",
+      "Constructed an interactive KPI dashboard in Power BI and Python that tracked profit margin and ROI for the finance team, informing SEO tool investment decisions that contributed to a 10% increase in monthly revenue.",
+      "Built a lead scoring system on 1,000+ client records in SQL Server to manage qualified leads, improving conversion-rate calculation accuracy and reducing customer acquisition cost by 20%.",
     ],
   },
   {
-    company: "Pinnacle Consulting Group",
-    role: "Business Analyst",
-    period: "2019 — 2022",
+    company: "Stanza — Menlo Park, CA",
+    role: "Business Analyst Intern",
+    period: "Jun 2025 — Aug 2025",
     achievements: [
-      "Elicited requirements and documented AS-IS / TO-BE processes for three enterprise clients, improving workflow efficiency by 15–25%.",
-      "Created financial models and pricing analyses in Excel that informed a new SaaS pricing strategy and an 8% revenue uplift opportunity.",
-      "Facilitated workshops with stakeholders across Product, Engineering, and Finance to align priorities and reduce scope creep.",
+      "Led end-to-end development of a new AI-drafting feature by conducting 100+ client interviews and translating findings into product requirement documents, reducing engineering rework by 30% across 4 sprint cycles.",
+      "Built a marketing performance dashboard by interpreting and visualizing 30+ Excel datasets in Power BI and Python to monitor marketing spend and lead generation rate, supporting social media campaign investment decisions.",
     ],
   },
   {
-    company: "RetailCore Solutions",
-    role: "Junior Data Analyst",
-    period: "2017 — 2019",
+    company: "MSB Bank — Hanoi, Vietnam",
+    role: "Financial Analyst Intern",
+    period: "May 2024 — Aug 2024",
     achievements: [
-      "Maintained weekly sales and inventory reports using SQL and Excel for a 50-store retail chain.",
-      "Identified slow-moving inventory trends that informed a clearance strategy and reduced excess stock by 10%.",
-      "Supported A/B test design and analysis for promotional campaigns.",
+      "Optimized business loan performance reporting by designing SQL queries to integrate 40+ datasets and building Excel dashboards tracking loan utilization, cutting manual reporting effort by 30% across 100,000+ credit users.",
+      "Analyzed credit trends of Vietnamese SMEs (valued $1M–$20M) by monitoring overdue and bad-debt expenses, identifying lending gaps, and assessing policy changes — supporting a partnership with the OPEC Fund to expand financing for 500,000 SMEs in Vietnam.",
     ],
   },
 ];
