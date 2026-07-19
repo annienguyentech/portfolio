@@ -1,32 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
-import { ExperienceItem } from "../components/ExperienceItem";
 
 export const Route = createFileRoute("/experience")({
   component: ExperiencePage,
   head: () => ({
     meta: [
-      { title: "Experience | Annie Nguyen" },
+      {
+        title: "Professional Experience | Annie Nguyen",
+      },
       {
         name: "description",
         content:
-          "Professional experience of Annie Nguyen across data analytics, business analysis, consulting, banking, and student support.",
+          "Professional experience of Annie Nguyen across data analytics, business analysis, consulting, financial analysis, and community engagement.",
       },
-      { property: "og:title", content: "Experience | Annie Nguyen" },
+      {
+        property: "og:title",
+        content: "Professional Experience | Annie Nguyen",
+      },
       {
         property: "og:description",
         content:
-          "Professional experience of Annie Nguyen across data analytics, business analysis, consulting, banking, and student support.",
+          "Explore Annie Nguyen's professional experience in data analytics, business analysis, consulting, banking, and community engagement.",
       },
-      { property: "og:url", content: "/experience" },
+      {
+        property: "og:url",
+        content: "/experience",
+      },
     ],
-    links: [{ rel: "canonical", href: "/experience" }],
+    links: [
+      {
+        rel: "canonical",
+        href: "/experience",
+      },
+    ],
   }),
 });
 
-const experiences = [
+interface Experience {
+  company: string;
+  location: string;
+  role: string;
+  period: string;
+  achievements: string[];
+}
+
+const experiences: Experience[] = [
   {
-    company: "KPIM | Remote",
+    company: "KPIM",
+    location: "Remote",
     role: "Data Analytics Intern",
     period: "January 2027 - March 2027",
     achievements: [
@@ -34,7 +55,8 @@ const experiences = [
     ],
   },
   {
-    company: "Auspify Technologies | Remote",
+    company: "Auspify Technologies",
+    location: "Remote",
     role: "Data Analysis Intern",
     period: "June 2026 - August 2026",
     achievements: [
@@ -42,18 +64,18 @@ const experiences = [
     ],
   },
   {
-    company:
-      "Gonzaga University, Center for Community Engagement | Spokane, WA",
+    company: "Gonzaga University, Center for Community Engagement",
+    location: "Spokane, WA",
     role: "Administrative Assistant",
     period: "August 2025 - Present",
     achievements: [
-      "Managed volunteer program tracking by monitoring an internal database and maintaining current records for 100+ student volunteers and staff across 10+ projects.",
-      "Supported program communication through email, phone outreach, and cross-team collaboration, ensuring timely completion of requirements and deadlines.",
+      "Managed volunteer program tracking by monitoring an internal database system and maintaining current records for 100+ student volunteers and staff across 10+ projects.",
+      "Supported communication through email, phone outreach, and cross-team collaboration, ensuring timely delivery of program requirements and completion of deadlines.",
     ],
   },
   {
-    company:
-      "Gonzaga University, Center for Student Academic Success | Spokane, WA",
+    company: "Gonzaga University, Center for Student Academic Success",
+    location: "Spokane, WA",
     role: "Peer Academic Coach",
     period: "January 2024 - Present",
     achievements: [
@@ -63,7 +85,8 @@ const experiences = [
     ],
   },
   {
-    company: "Credential Network | Spokane, WA",
+    company: "Credential Network",
+    location: "Spokane, WA",
     role: "Business Consultant",
     period: "September 2025 - December 2025",
     achievements: [
@@ -72,17 +95,19 @@ const experiences = [
     ],
   },
   {
-    company: "Stanza | Menlo Park, CA",
+    company: "Stanza",
+    location: "Menlo Park, CA",
     role: "Business Analyst Intern",
     period: "June 2025 - August 2025",
     achievements: [
       "Led the end-to-end development of a new AI drafting feature by interviewing 100+ potential clients and collaborating with the software engineering team, producing requirements documentation that reduced development rework by 30%.",
-      "Designed a reporting dashboard by interpreting and visualizing 30+ Excel datasets with Power BI and Python to monitor monthly marketing spending and lead generation rates, supporting social media campaign investment decisions.",
+      "Designed a reporting dashboard by interpreting and visualizing 30+ Excel datasets using Power BI and Python to monitor monthly marketing spending and lead generation rates, supporting social media campaign investment decisions.",
       "Conducted pricing validation through competitor benchmarking and insights from 200+ users, helping guide a strategic pricing update for the premium subscription tier.",
     ],
   },
   {
-    company: "MSB Bank | Hanoi, Vietnam",
+    company: "MSB Bank",
+    location: "Hanoi, Vietnam",
     role: "Financial Analyst Intern",
     period: "May 2024 - August 2024",
     achievements: [
@@ -91,7 +116,8 @@ const experiences = [
     ],
   },
   {
-    company: "Petrolimex | Haiphong, Vietnam",
+    company: "Petrolimex",
+    location: "Haiphong, Vietnam",
     role: "Business Development Intern",
     period: "December 2023 - January 2024",
     achievements: [
@@ -104,23 +130,52 @@ const experiences = [
 function ExperiencePage() {
   return (
     <SectionWrapper>
-      <div className="mb-12">
+      <header className="mb-12">
         <h1 className="mb-3 text-3xl font-bold text-foreground">
-          Experience
+          Professional Experience
         </h1>
 
-        <p className="max-w-2xl text-muted-foreground">
-          My professional experience across data analytics, business analysis,
-          consulting, banking, and student support.
+        <p className="max-w-3xl leading-relaxed text-muted-foreground">
+          Explore my professional experience applying data analytics, business
+          intelligence, financial analysis, and consulting skills to solve
+          business problems, improve reporting processes, and support
+          data-driven decisions.
         </p>
-      </div>
+      </header>
 
       <div className="space-y-12">
         {experiences.map((experience) => (
-          <ExperienceItem
+          <article
             key={`${experience.company}-${experience.role}`}
-            {...experience}
-          />
+            className="border-b border-border pb-10 last:border-b-0"
+          >
+            <div className="mb-4 flex flex-col justify-between gap-3 md:flex-row md:items-start">
+              <div>
+                <h2 className="text-xl font-semibold text-foreground">
+                  {experience.role}
+                </h2>
+
+                <p className="mt-1 font-medium text-primary">
+                  {experience.company} | {experience.location}
+                </p>
+              </div>
+
+              <p className="shrink-0 text-sm font-medium text-muted-foreground">
+                {experience.period}
+              </p>
+            </div>
+
+            <ul className="list-disc space-y-2 pl-5 text-muted-foreground marker:text-primary">
+              {experience.achievements.map((achievement) => (
+                <li
+                  key={achievement}
+                  className="pl-1 leading-relaxed"
+                >
+                  {achievement}
+                </li>
+              ))}
+            </ul>
+          </article>
         ))}
       </div>
     </SectionWrapper>
