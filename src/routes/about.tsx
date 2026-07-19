@@ -131,35 +131,64 @@ function AboutPage() {
 
       <section className="mt-16">
         <h2 className="mb-6 text-2xl font-bold text-foreground">Education</h2>
-        <div className="space-y-8">
-          {education.map((item) => (
-            <article
-              key={item.school}
-              className="border-b border-border pb-8 last:border-b-0"
-            >
-              <div className="flex flex-col justify-between gap-2 md:flex-row md:items-start">
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground">
-                    {item.school}
-                  </h3>
-                  <p className="mt-1 font-medium text-primary">{item.degree}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {item.location}
-                  </p>
-                </div>
-                <p className="shrink-0 text-sm font-medium text-muted-foreground">
-                  {item.period}
-                </p>
+        <article className="rounded-xl border border-border bg-card p-6 md:p-8">
+          <div className="flex flex-col justify-between gap-3 md:flex-row md:items-start">
+            <div>
+              <h3 className="text-xl font-semibold text-foreground md:text-2xl">
+                {education.school}
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {education.location}
+              </p>
+            </div>
+            <p className="shrink-0 text-sm font-medium text-muted-foreground">
+              {education.period}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {education.degrees.map((degree) => (
+              <div
+                key={degree.title}
+                className="rounded-lg border border-border bg-background p-5"
+              >
+                <span className="inline-block rounded bg-primary/10 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                  {degree.type}
+                </span>
+                <h4 className="mt-3 text-lg font-semibold text-foreground">
+                  {degree.title}
+                </h4>
+                <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+                  {degree.highlights.map((h) => (
+                    <li key={h} className="flex items-start gap-2">
+                      <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground marker:text-primary">
-                {item.details.map((d) => (
-                  <li key={d} className="pl-1 leading-relaxed">{d}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-lg border border-dashed border-border bg-background p-5">
+            <span className="inline-block rounded bg-muted px-2 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              {education.minor.type}
+            </span>
+            <h4 className="mt-3 text-lg font-semibold text-foreground">
+              {education.minor.title}
+            </h4>
+            <ul className="mt-3 grid gap-1.5 text-sm text-muted-foreground sm:grid-cols-3">
+              {education.minor.highlights.map((h) => (
+                <li key={h} className="flex items-start gap-2">
+                  <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
       </section>
+
 
       <div className="mt-14 flex flex-wrap gap-3">
         <Link to="/experience" className="btn-primary">View my experience</Link>
