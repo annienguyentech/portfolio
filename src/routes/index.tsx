@@ -184,13 +184,11 @@ function Index() {
             </div>
 
             <div className="mx-auto w-full max-w-sm">
-              <div className="overflow-hidden rounded-xl border border-border bg-card p-2 shadow-sm">
-                <img
-                  src="/profile-pic.png"
-                  alt="Professional portrait of Annie Nguyen"
-                  className="aspect-square w-full rounded-lg object-cover"
-                />
-              </div>
+              <img
+                src="/profile-pic.png"
+                alt="Portrait of Annie Nguyen"
+                className="w-full rounded-2xl object-cover"
+              />
             </div>
           </div>
         </SectionWrapper>
