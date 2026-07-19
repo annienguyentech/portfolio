@@ -79,14 +79,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Annie Nguyen — Data & Business Analyst" },
-      { name: "description", content: "Personal portfolio of Annie Nguyen, a Business Analytics & Economics student at Gonzaga University with experience in SQL, Python, Power BI, and Tableau." },
+      { title: "Annie Nguyen | Data Analyst & Business Analyst" },
+      { name: "description", content: "Data and business analytics portfolio featuring projects in SQL, Python, Power BI, Excel, machine learning, and business intelligence." },
       { name: "author", content: "Annie Nguyen" },
-      { property: "og:title", content: "Annie Nguyen — Data & Business Analyst" },
-      { property: "og:description", content: "Portfolio showcasing analytics projects, business analyst internships, and leadership experience." },
+      { property: "og:title", content: "Annie Nguyen | Data Analyst & Business Analyst" },
+      { property: "og:description", content: "Data and business analytics portfolio featuring projects in SQL, Python, Power BI, Excel, machine learning, and business intelligence." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@annienguyen" },
+      { name: "twitter:title", content: "Annie Nguyen | Data Analyst & Business Analyst" },
+      { name: "twitter:description", content: "Data and business analytics portfolio featuring projects in SQL, Python, Power BI, Excel, machine learning, and business intelligence." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/75287476-2d99-4883-b655-520581e1aaf7" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/75287476-2d99-4883-b655-520581e1aaf7" },
     ],
     links: [
       {

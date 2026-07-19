@@ -6,10 +6,10 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Annie Nguyen — Data & Business Analyst" },
-      { name: "description", content: "Personal portfolio of Annie Nguyen, a Business Analytics & Economics student and aspiring Data / Business Analyst." },
-      { property: "og:title", content: "Annie Nguyen — Data & Business Analyst" },
-      { property: "og:description", content: "Portfolio showcasing analytics projects, business analyst internships, and leadership experience." },
+      { title: "Annie Nguyen | Data Analyst & Business Analyst" },
+      { name: "description", content: "Data and business analytics portfolio featuring projects in SQL, Python, Power BI, Excel, machine learning, and business intelligence." },
+      { property: "og:title", content: "Annie Nguyen | Data Analyst & Business Analyst" },
+      { property: "og:description", content: "Data and business analytics portfolio featuring projects in SQL, Python, Power BI, Excel, machine learning, and business intelligence." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
