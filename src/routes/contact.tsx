@@ -16,25 +16,6 @@ export const Route = createFileRoute("/contact")({
   }),
 });
 
-const skillGroups = [
-  {
-    title: "Programming & Databases",
-    skills: ["SQL", "Python", "R", "HTML"],
-  },
-  {
-    title: "Analytics & Visualization",
-    skills: ["Excel (VLOOKUP, PivotTables, Power Query)", "Tableau", "Power BI"],
-  },
-  {
-    title: "Business & AI Tools",
-    skills: ["Microsoft 365 (PowerPoint, Visio, Project)", "GitHub", "Copilot", "NotebookLM"],
-  },
-  {
-    title: "Coursework Highlights",
-    skills: ["Database Management", "Data Analytics for Business", "Regression Analysis", "MIS", "Problem Solving & Programming", "Calculus III"],
-  },
-];
-
 const contactLinks = [
   {
     icon: <Mail className="h-4 w-4" />,
@@ -60,36 +41,13 @@ function ContactPage() {
   return (
     <SectionWrapper>
       <div className="mb-12">
-        <h1 className="mb-3 text-3xl font-bold text-foreground">Skills & Contact</h1>
+        <h1 className="mb-3 text-3xl font-bold text-foreground">Contact</h1>
         <p className="max-w-2xl text-muted-foreground">
-          My toolkit and how to reach me. I am open to Data Analyst, Business Analyst, and hybrid analytics roles.
+          I am open to Data Analyst, Business Analyst, and hybrid analytics roles. The easiest way to reach me is by email.
         </p>
       </div>
 
       <div className="grid gap-12 lg:grid-cols-2">
-        {/* Skills */}
-        <div>
-          <h2 className="mb-6 text-xl font-semibold text-foreground">Skills</h2>
-          <div className="space-y-8">
-            {skillGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="mb-3 text-sm font-semibold text-primary">{group.title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Contact */}
         <div>
           <h2 className="mb-6 text-xl font-semibold text-foreground">Get in touch</h2>
           <div className="space-y-4">
@@ -118,8 +76,10 @@ function ContactPage() {
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="mt-8 rounded-lg bg-muted/30 p-6">
+        <div>
+          <div className="rounded-lg bg-muted/30 p-6">
             <h3 className="mb-2 text-sm font-semibold text-foreground">Availability</h3>
             <p className="text-sm text-muted-foreground">
               I'm a Business Analytics & Economics student at Gonzaga University (graduating December 2027), actively seeking Data Analyst and Business Analyst internships and new-grad roles. I typically respond within 24 hours.
