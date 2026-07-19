@@ -24,20 +24,44 @@ export const Route = createFileRoute("/about")({
   }),
 });
 
-const education = [
-  {
-    school: "Gonzaga University",
-    location: "Spokane, WA",
-    degree:
-      "Dual degree — B.B.A. in Business Analytics & B.S. in Economics; Minor in Leadership Studies",
-
-    period: "August 2023 – December 2027",
-    details: [
-      "Relevant coursework: Database Management, Data Analytics for Business, Regression Analysis, Management Information Systems, Problem Solving & Programming, Calculus III.",
-      "Active in the Vietnamese Student Association and Peer Academic Coaching program.",
+const education = {
+  school: "Gonzaga University",
+  location: "Spokane, WA",
+  period: "August 2023 – December 2027",
+  degrees: [
+    {
+      title: "Bachelor of Business Administration in Business Analytics",
+      type: "Major",
+      highlights: [
+        "Database Management",
+        "Data Analytics for Business",
+        "Regression Analysis",
+        "Management Information Systems",
+        "Problem Solving & Programming",
+      ],
+    },
+    {
+      title: "Bachelor of Science in Economics",
+      type: "Major",
+      highlights: [
+        "Microeconomic Theory",
+        "Macroeconomic Analysis",
+        "Econometrics",
+        "Financial Economics",
+      ],
+    },
+  ],
+  minor: {
+    title: "Minor in Leadership Studies",
+    type: "Minor",
+    highlights: [
+      "Peer Academic Coach",
+      "Vietnamese Student Association leader",
+      "Community engagement program volunteer",
     ],
   },
-];
+};
+
 
 const quickFacts = [
   { icon: <MapPin className="h-4 w-4" />, label: "Based in Spokane, WA" },
