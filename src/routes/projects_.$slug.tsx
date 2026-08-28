@@ -308,6 +308,8 @@ function ProjectDetailsPage() {
   const { slug } = Route.useParams();
   const project = projectDetails[slug];
   const repositoryUrl = projectRepositories[slug];
+  const gallery = projectGallery[slug];
+
 
   if (!project) {
     return (
