@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
+import { projectGallery } from "../data/projectGallery";
 import {
   ArrowLeft,
   BarChart3,
@@ -7,6 +8,8 @@ import {
   CheckCircle2,
   Database,
   Github,
+  Image as ImageIcon,
+
   Lightbulb,
   Target,
   Wrench,
