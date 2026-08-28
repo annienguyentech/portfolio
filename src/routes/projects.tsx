@@ -39,6 +39,16 @@ export const Route = createFileRoute("/projects")({
 
 const projects = [
   {
+    slug: "xmas-gift-analysis",
+    title: "Xmas Gift Analysis",
+    category: "SQL and Business Analysis",
+    description:
+      "Analyzed 41,163 Christmas-season transactions with SQL to evaluate sales trends, geographic markets, customer segments, product performance, purchase channels, and peak shopping periods.",
+    tags: ["SQL Server", "SQL Views", "Data Analysis", "Business Insights"],
+    outcome:
+      "Identified growth in the latest season, strong in-store revenue, and children’s products as top-performing merchandise.",
+  },
+  {
     slug: "revenue-plan-progress-analysis",
     title: "Revenue Plan Progress Analysis",
     category: "Business Intelligence",
