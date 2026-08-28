@@ -5,6 +5,7 @@ import {
   BarChart3,
   CheckCircle2,
   Database,
+  Github,
   Lightbulb,
   Target,
   Wrench,
@@ -44,9 +45,50 @@ interface ProjectDetails {
   process: string[];
   results: string[];
   tools: string[];
+  repositoryUrl?: string;
 }
 
 const projectDetails: Record<string, ProjectDetails> = {
+  "xmas-gift-analysis": {
+    title: "Xmas Gift Analysis",
+    category: "SQL and Business Analysis Project",
+    summary:
+      "A SQL analysis of 41,163 Christmas-season sales transactions that evaluates seasonal growth, geographic markets, customer behavior, product performance, purchase channels, payment preferences, and peak shopping periods.",
+    challenge:
+      "Transaction-level Christmas sales data contained useful but disconnected dimensions across time, location, customers, products, and purchasing behavior. The goal was to organize the data for analysis and turn the results into practical recommendations for sales planning, inventory, staffing, and channel strategy.",
+    objectives: [
+      "Evaluate revenue, quantity sold, cost, and profit across Christmas seasons.",
+      "Measure the latest season’s revenue and profit growth against the prior season.",
+      "Identify high-value countries, cities, product categories, and products.",
+      "Compare revenue across customer age groups, gender, purchase channels, and payment methods.",
+      "Identify peak shopping days and hours to inform operations and promotions.",
+    ],
+    process: [
+      "Explored the database tables, data dictionary, and transaction-level sales fields.",
+      "Created the dbo.v_xmas_sales analytical view with Christmas season, date, weekday, and hour fields.",
+      "Developed SQL queries for ten business questions across time, market, customer, product, channel, and purchasing dimensions.",
+      "Calculated revenue, quantity sold, orders, cost, profit, revenue share, and year-over-year growth metrics.",
+      "Interpreted query results and translated the findings into recommendations for inventory, marketing, staffing, and customer experience.",
+    ],
+    results: [
+      "The latest season increased quantity sold by 2.17%, revenue by 2.01%, and profit by 1.87% over the prior season.",
+      "In-store purchases generated more than 60% of seasonal revenue, indicating an opportunity to strengthen online and Christmas-market experiences.",
+      "Toys and children’s products were the highest-revenue merchandise, with customers ages 1-11 generating the most revenue.",
+      "Peak purchasing occurred from 8 AM to 8 PM, with the strongest volume on Sunday, Saturday, Monday, and Tuesday.",
+      "Recommended prioritizing high-performing markets, maintaining children’s-product inventory, targeting lower-performing channels, and aligning staffing and promotions with peak demand.",
+    ],
+    tools: [
+      "SQL Server",
+      "SQL",
+      "SQL Views",
+      "Microsoft Excel",
+      "Data Analysis",
+      "Business Analysis",
+      "Data Visualization",
+    ],
+    repositoryUrl: "https://github.com/annienguyentech/xmas-gift-analysis",
+  },
+
   "revenue-plan-progress-analysis": {
     title: "Revenue Plan Progress Analysis",
     category: "Power BI Business Intelligence Project",
@@ -358,6 +400,18 @@ function ProjectDetailsPage() {
                 </span>
               ))}
             </div>
+
+            {project.repositoryUrl && (
+              <a
+                href={project.repositoryUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 hover:underline"
+              >
+                <Github className="h-4 w-4" />
+                View source on GitHub
+              </a>
+            )}
           </div>
         </aside>
       </div>
