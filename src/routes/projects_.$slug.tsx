@@ -3,6 +3,7 @@ import { SectionWrapper } from "../components/SectionWrapper";
 import {
   ArrowLeft,
   BarChart3,
+  BookOpen,
   CheckCircle2,
   Database,
   Github,
