@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
+import { projectGallery } from "../data/projectGallery";
 import {
   ArrowLeft,
   BarChart3,
@@ -7,6 +8,8 @@ import {
   CheckCircle2,
   Database,
   Github,
+  Image as ImageIcon,
+
   Lightbulb,
   Target,
   Wrench,
@@ -305,6 +308,8 @@ function ProjectDetailsPage() {
   const { slug } = Route.useParams();
   const project = projectDetails[slug];
   const repositoryUrl = projectRepositories[slug];
+  const gallery = projectGallery[slug];
+
 
   if (!project) {
     return (
@@ -397,6 +402,36 @@ function ProjectDetailsPage() {
           >
 <BulletList items={project.results} />
           </ProjectSection>
+
+          {gallery && gallery.length > 0 && (
+            <ProjectSection
+              icon={<ImageIcon className="h-5 w-5" />}
+              title="Queries and Result Screenshots"
+            >
+              <div className="grid gap-6 sm:grid-cols-2">
+                {gallery.map((item) => (
+                  <figure
+                    key={item.src}
+                    className="overflow-hidden rounded-lg border border-border bg-card"
+                  >
+                    <a href={item.src} target="_blank" rel="noreferrer">
+                      <img
+                        src={item.src}
+                        alt={`${project.title} — ${item.caption}`}
+                        loading="lazy"
+                        className="w-full bg-background object-contain transition-opacity hover:opacity-90"
+                      />
+                    </a>
+
+                    <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+                      {item.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </ProjectSection>
+          )}
+
 
           {repositoryUrl && (
             <section className="border-t border-border pt-10 text-center">
