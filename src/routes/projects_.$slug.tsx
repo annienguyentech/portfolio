@@ -303,7 +303,7 @@ const projectRepositories: Record<string, string> = {
 
 function ProjectDetailsPage() {
   const { slug } = Route.useParams();
-const project = projectDetails[slug];
+  const project = projectDetails[slug];
   const repositoryUrl = projectRepositories[slug];
 
   if (!project) {
