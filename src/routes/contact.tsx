@@ -82,7 +82,7 @@ function ContactPage() {
           <div className="rounded-lg bg-muted/30 p-6">
             <h3 className="mb-2 text-sm font-semibold text-foreground">Availability</h3>
             <p className="text-sm text-muted-foreground">
-              I'm a Business Analytics & Economics student at Gonzaga University (graduating December 2027), actively seeking Data Analyst and Business Analyst internships and new-grad roles. I typically respond within 24 hours.
+              I'm a Business Analytics & Economics student at Gonzaga University (graduating May 2027), actively seeking Data Analyst and Business Analyst internships and new-grad roles. I typically respond within 24 hours.
             </p>
           </div>
         </div>
