@@ -395,8 +395,38 @@ function ProjectDetailsPage() {
             icon={<BarChart3 className="h-5 w-5" />}
             title="Results and Insights"
           >
-            <BulletList items={project.results} />
+<BulletList items={project.results} />
           </ProjectSection>
+
+          {repositoryUrl && (
+            <section className="border-t border-border pt-10 text-center">
+              <p className="text-sm text-muted-foreground">
+                Explore the complete source code and original project documentation.
+              </p>
+
+              <div className="mt-4 flex flex-wrap justify-center gap-3">
+                <a
+                  href={repositoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary inline-flex"
+                >
+                  <Github className="h-4 w-4" />
+                  View on GitHub
+                </a>
+
+                <a
+                  href={`${repositoryUrl}/blob/main/README.md`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary inline-flex"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  View README
+                </a>
+              </div>
+            </section>
+          )}
         </main>
 
         <aside>
