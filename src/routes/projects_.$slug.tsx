@@ -361,76 +361,88 @@ function ProjectDetailsPage() {
 
       <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
         <main className="space-y-12">
-          <ProjectSection
-            icon={<Target className="h-5 w-5" />}
-            title="Business Challenge"
-          >
-            <p className="leading-relaxed text-muted-foreground">
-              {project.challenge}
-            </p>
-          </ProjectSection>
-
-          <ProjectSection
-            icon={<Lightbulb className="h-5 w-5" />}
-            title="Project Objectives"
-          >
-            <BulletList items={project.objectives} />
-          </ProjectSection>
-
-          <ProjectSection
-            icon={<Database className="h-5 w-5" />}
-            title="Analysis Process"
-          >
-            <ol className="space-y-4">
-              {project.process.map((step, index) => (
-                <li key={step} className="flex gap-4">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                    {index + 1}
-                  </span>
-
-                  <p className="pt-0.5 leading-relaxed text-muted-foreground">
-                    {step}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </ProjectSection>
-
-          <ProjectSection
-            icon={<BarChart3 className="h-5 w-5" />}
-            title="Results and Insights"
-          >
-<BulletList items={project.results} />
-          </ProjectSection>
-
-          {gallery && gallery.length > 0 && (
+          {readme ? (
             <ProjectSection
-              icon={<ImageIcon className="h-5 w-5" />}
-              title="Queries and Result Screenshots"
+              icon={<FileText className="h-5 w-5" />}
+              title="Full Project Documentation"
             >
-              <div className="grid gap-6 sm:grid-cols-2">
-                {gallery.map((item) => (
-                  <figure
-                    key={item.src}
-                    className="overflow-hidden rounded-lg border border-border bg-card"
-                  >
-                    <a href={item.src} target="_blank" rel="noreferrer">
-                      <img
-                        src={item.src}
-                        alt={`${project.title} — ${item.caption}`}
-                        loading="lazy"
-                        className="w-full bg-background object-contain transition-opacity hover:opacity-90"
-                      />
-                    </a>
-
-                    <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
-                      {item.caption}
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
+              <ReadmeContent markdown={readme} repo={slug} />
             </ProjectSection>
+          ) : (
+            <>
+              <ProjectSection
+                icon={<Target className="h-5 w-5" />}
+                title="Business Challenge"
+              >
+                <p className="leading-relaxed text-muted-foreground">
+                  {project.challenge}
+                </p>
+              </ProjectSection>
+
+              <ProjectSection
+                icon={<Lightbulb className="h-5 w-5" />}
+                title="Project Objectives"
+              >
+                <BulletList items={project.objectives} />
+              </ProjectSection>
+
+              <ProjectSection
+                icon={<Database className="h-5 w-5" />}
+                title="Analysis Process"
+              >
+                <ol className="space-y-4">
+                  {project.process.map((step, index) => (
+                    <li key={step} className="flex gap-4">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                        {index + 1}
+                      </span>
+
+                      <p className="pt-0.5 leading-relaxed text-muted-foreground">
+                        {step}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </ProjectSection>
+
+              <ProjectSection
+                icon={<BarChart3 className="h-5 w-5" />}
+                title="Results and Insights"
+              >
+                <BulletList items={project.results} />
+              </ProjectSection>
+
+              {gallery && gallery.length > 0 && (
+                <ProjectSection
+                  icon={<ImageIcon className="h-5 w-5" />}
+                  title="Queries and Result Screenshots"
+                >
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    {gallery.map((item) => (
+                      <figure
+                        key={item.src}
+                        className="overflow-hidden rounded-lg border border-border bg-card"
+                      >
+                        <a href={item.src} target="_blank" rel="noreferrer">
+                          <img
+                            src={item.src}
+                            alt={`${project.title} — ${item.caption}`}
+                            loading="lazy"
+                            className="w-full bg-background object-contain transition-opacity hover:opacity-90"
+                          />
+                        </a>
+
+                        <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+                          {item.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </ProjectSection>
+              )}
+            </>
           )}
+
 
 
           {repositoryUrl && (
