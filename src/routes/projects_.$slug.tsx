@@ -450,9 +450,9 @@ function ProjectDetailsPage() {
               ))}
             </div>
 
-            {project.repositoryUrl && (
+{repositoryUrl && (
               <a
-                href={project.repositoryUrl}
+                href={repositoryUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 hover:underline"
