@@ -284,6 +284,23 @@ const projectDetails: Record<string, ProjectDetails> = {
   },
 };
 
+const projectRepositories: Record<string, string> = {
+  "xmas-gift-analysis":
+    "https://github.com/annienguyentech/xmas-gift-analysis",
+  "revenue-plan-progress-analysis":
+    "https://github.com/annienguyentech/revenue-plan-progress-analysis",
+  "kpim-mart-sales-excel-dashboard":
+    "https://github.com/annienguyentech/kpim-mart-sales-excel-dashboard",
+  "sales-optimization-analysis":
+    "https://github.com/annienguyentech/sales-optimization-analysis",
+  "marketing-campaign-response-prediction":
+    "https://github.com/annienguyentech/marketing-campaign-response-prediction",
+  "customer-behavior-and-segmentation-analysis":
+    "https://github.com/annienguyentech/customer-behavior-and-segmentation-analysis",
+  "outstanding-loans-and-bank-capital-analysis":
+    "https://github.com/annienguyentech/outstanding-loans-and-bank-capital-analysis",
+};
+
 function ProjectDetailsPage() {
   const { slug } = Route.useParams();
   const project = projectDetails[slug];
