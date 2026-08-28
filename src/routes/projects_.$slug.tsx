@@ -3,6 +3,7 @@ import { SectionWrapper } from "../components/SectionWrapper";
 import {
   ArrowLeft,
   BarChart3,
+  BookOpen,
   CheckCircle2,
   Database,
   Github,
@@ -283,9 +284,27 @@ const projectDetails: Record<string, ProjectDetails> = {
   },
 };
 
+const projectRepositories: Record<string, string> = {
+  "xmas-gift-analysis":
+    "https://github.com/annienguyentech/xmas-gift-analysis",
+  "revenue-plan-progress-analysis":
+    "https://github.com/annienguyentech/revenue-plan-progress-analysis",
+  "kpim-mart-sales-excel-dashboard":
+    "https://github.com/annienguyentech/kpim-mart-sales-excel-dashboard",
+  "sales-optimization-analysis":
+    "https://github.com/annienguyentech/sales-optimization-analysis",
+  "marketing-campaign-response-prediction":
+    "https://github.com/annienguyentech/marketing-campaign-response-prediction",
+  "customer-behavior-and-segmentation-analysis":
+    "https://github.com/annienguyentech/customer-behavior-and-segmentation-analysis",
+  "outstanding-loans-and-bank-capital-analysis":
+    "https://github.com/annienguyentech/outstanding-loans-and-bank-capital-analysis",
+};
+
 function ProjectDetailsPage() {
   const { slug } = Route.useParams();
   const project = projectDetails[slug];
+  const repositoryUrl = projectRepositories[slug];
 
   if (!project) {
     return (
@@ -376,8 +395,38 @@ function ProjectDetailsPage() {
             icon={<BarChart3 className="h-5 w-5" />}
             title="Results and Insights"
           >
-            <BulletList items={project.results} />
+<BulletList items={project.results} />
           </ProjectSection>
+
+          {repositoryUrl && (
+            <section className="border-t border-border pt-10 text-center">
+              <p className="text-sm text-muted-foreground">
+                Explore the complete source code and original project documentation.
+              </p>
+
+              <div className="mt-4 flex flex-wrap justify-center gap-3">
+                <a
+                  href={repositoryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary inline-flex"
+                >
+                  <Github className="h-4 w-4" />
+                  View on GitHub
+                </a>
+
+                <a
+                  href={`${repositoryUrl}/blob/main/README.md`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary inline-flex"
+                >
+                  <BookOpen className="h-4 w-4" />
+                  View README
+                </a>
+              </div>
+            </section>
+          )}
         </main>
 
         <aside>
