@@ -78,6 +78,14 @@ const strengths = [
 
 const featuredProjects = [
   {
+    slug: "xmas-gift-analysis",
+    category: "SQL",
+    title: "Xmas Gift Analysis",
+    description:
+      "A SQL analysis of 41,163 Christmas-season transactions across sales performance, customer behavior, products, markets, and purchase channels.",
+    tags: ["SQL Server", "Data Analysis", "Business Insights"],
+  },
+  {
     slug: "revenue-plan-progress-analysis",
     category: "Power BI",
     title: "Revenue Plan Progress Analysis",
