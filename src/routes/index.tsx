@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { CompanyLogo, companyBrandStyle } from "../components/CompanyLogo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
 import {
@@ -195,9 +196,10 @@ function Index() {
             { company: "Stanza", role: "Business Analyst Intern", detail: "Conducted more than 100 client interviews for an AI drafting feature and built reporting for marketing spending and lead generation." },
             { company: "MSB Bank", role: "Financial Analyst Intern", detail: "Integrated more than 40 datasets with SQL and built Excel reporting for loan utilization across more than 100,000 credit users." },
           ].map((experience) => (
-            <article key={experience.company} className="content-card p-5">
-              <h3 className="font-semibold text-card-foreground">{experience.company}</h3>
-              <p className="mt-1 text-sm font-medium text-primary">{experience.role}</p>
+            <article key={experience.company} className="company-experience p-5" style={companyBrandStyle(experience.company)}>
+              <CompanyLogo company={experience.company} />
+              <h3 className="company-name mt-4 font-semibold">{experience.company}</h3>
+              <p className="mt-1 text-sm font-medium text-foreground">{experience.role}</p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{experience.detail}</p>
             </article>
           ))}
