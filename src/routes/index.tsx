@@ -114,7 +114,7 @@ function Index() {
   return (
     <>
       <section className="home-intro bg-background">
-        <SectionWrapper className="py-12 md:py-20">
+        <SectionWrapper className="py-8 md:py-12">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="max-w-3xl">
               <p className="eyebrow mb-5">
@@ -183,6 +183,26 @@ function Index() {
           </div>
         </SectionWrapper>
       </section>
+
+      <SectionWrapper>
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+          <h2 className="text-2xl font-bold text-foreground">Experience at a glance</h2>
+          <Link to="/experience" className="text-link">View experience <ArrowRight className="h-4 w-4" /></Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            { company: "Credential Network", role: "Business Consultant Intern", detail: "Built a KPI dashboard with Power BI and Python, and a SQL Server lead scoring system using data from more than 1,000 clients." },
+            { company: "Stanza", role: "Business Analyst Intern", detail: "Conducted more than 100 client interviews for an AI drafting feature and built reporting for marketing spending and lead generation." },
+            { company: "MSB Bank", role: "Financial Analyst Intern", detail: "Integrated more than 40 datasets with SQL and built Excel reporting for loan utilization across more than 100,000 credit users." },
+          ].map((experience) => (
+            <article key={experience.company} className="content-card p-5">
+              <h3 className="font-semibold text-card-foreground">{experience.company}</h3>
+              <p className="mt-1 text-sm font-medium text-primary">{experience.role}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{experience.detail}</p>
+            </article>
+          ))}
+        </div>
+      </SectionWrapper>
 
       <section className="skills-section border-y border-border bg-muted/40">
         <SectionWrapper>
