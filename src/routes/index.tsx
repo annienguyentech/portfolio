@@ -193,9 +193,9 @@ function Index() {
 
             <div className="mx-auto w-full max-w-sm">
               <img
-                src="/profile-pic.png"
+                src="/annie-profile.jpg"
                 alt="Portrait of Annie Nguyen"
-                className="w-full rounded-2xl object-cover"
+                className="aspect-square w-full rounded-2xl object-cover object-bottom"
               />
             </div>
           </div>
