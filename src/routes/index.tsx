@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Annie Nguyen, a Business Analytics and Economics student specializing in SQL, Python, Power BI, Excel, machine learning, and business intelligence.",
+          "Portfolio of Annie Nguyen, a Business Analytics, Finance, and Economics student with a minor in Leadership Studies, specializing in SQL, Python, Power BI, Excel, machine learning, and business intelligence.",
       },
       {
         property: "og:title",
@@ -138,20 +138,25 @@ function Index() {
               </p>
 
               <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-                Annie Nguyen
+                Hi, I’m Annie.
               </h1>
 
               <p className="mt-6 max-w-2xl text-xl font-medium leading-relaxed text-foreground md:text-2xl">
-                Turning data into clear insights and practical business
-                decisions.
+                A Gonzaga student exploring the stories behind the numbers.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                I am a Business Analytics and Economics student at Gonzaga
-                University with experience in data analytics, business
-                consulting, financial analysis, and dashboard development. I
-                use SQL, Python, Power BI, and Excel to improve reporting,
-                identify opportunities, and support better decisions.
+                I study Business Analytics, Finance, and Economics at Gonzaga
+                University, with a minor in Leadership Studies. Based in Spokane,
+                I’m interested in the stories behind the numbers—and how those
+                stories help people make better decisions.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                Through projects and internships in analytics, consulting, and
+                finance, I’m learning to connect technical work with real business
+                questions. Here, you’ll find what I’ve been working on, what I’m
+                learning, and a little about the person behind the projects.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
@@ -176,13 +181,13 @@ function Index() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/projects" className="btn-primary">
-                  View Projects
+                  Explore my projects
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
-                <Link to="/experience" className="btn-secondary">
-                  View Experience
-                </Link>
+                <a href="#about-me" className="btn-secondary">
+                  Get to know me
+                </a>
 
                 <Link to="/contact" className="btn-secondary">
                   <Mail className="h-4 w-4" />
@@ -220,38 +225,60 @@ function Index() {
         </SectionWrapper>
       </section>
 
-      <SectionWrapper>
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="eyebrow mb-4">About Me</p>
-
-            <h2 className="text-3xl font-bold text-foreground">
-              Analytical skills with a strong business perspective
+      <section id="about-me" aria-labelledby="about-me-heading" className="scroll-mt-24">
+        <SectionWrapper>
+          <div className="mb-8 max-w-2xl">
+            <p className="eyebrow mb-4">A little more about me</p>
+            <h2 id="about-me-heading" className="text-3xl font-bold text-foreground">
+              Beyond the spreadsheets
             </h2>
+            <p className="mt-3 text-muted-foreground">
+              A few things you won’t find on my résumé.
+            </p>
           </div>
 
-          <div className="space-y-4 text-muted-foreground">
-            <p>
-              My experience includes business consulting, financial analysis,
-              product development, marketing analytics, and reporting. I enjoy
-              working between technical and business teams to make information
-              easier to understand and use.
-            </p>
-
-            <p>
-              Across my internships and projects, I have developed dashboards,
-              written SQL queries, analyzed large datasets, supported product
-              requirements, and translated findings into practical
-              recommendations.
-            </p>
-
-            <Link to="/experience" className="text-link">
-              Read about my experience
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                label: "Off the clock",
+                title: "Cooking & conversation",
+                description:
+                  "I enjoy cooking and getting to know people. Outside of class and work, a good conversation is one of my favorite ways to spend time.",
+              },
+              {
+                label: "Following along",
+                title: "What’s new in AI?",
+                description:
+                  "I keep up with AI news and new developments. I’m curious about what’s useful today and what might change how we work next.",
+              },
+              {
+                label: "Once you know me",
+                title: "A gentle first impression",
+                description:
+                  "I may come across as soft-spoken, but I’m direct and have strong opinions. Get to know me and you’ll hear them.",
+              },
+              {
+                label: "A fun fact",
+                title: "10 cities. About a month.",
+                description:
+                  "I once visited ten different cities in about a month. It’s one of the more unexpected facts about me.",
+              },
+            ].map((detail) => (
+              <article key={detail.title} className="content-card h-full p-6">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">
+                  {detail.label}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold text-card-foreground">
+                  {detail.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {detail.description}
+                </p>
+              </article>
+            ))}
           </div>
-        </div>
-      </SectionWrapper>
+        </SectionWrapper>
+      </section>
 
       <section className="border-y border-border bg-muted/40">
         <SectionWrapper>
