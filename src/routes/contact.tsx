@@ -6,9 +6,9 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Annie Nguyen" },
+      { title: "Contact | Annie Nguyen" },
       { name: "description", content: "Contact Annie Nguyen for data analyst and business analyst opportunities." },
-      { property: "og:title", content: "Contact — Annie Nguyen" },
+      { property: "og:title", content: "Contact | Annie Nguyen" },
       { property: "og:description", content: "Contact Annie Nguyen for data analyst and business analyst opportunities." },
       { property: "og:url", content: "/contact" },
     ],
@@ -57,12 +57,12 @@ function ContactPage() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/30"
+                className="flex min-w-0 items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/30"
               >
                 <div className="text-primary">{link.icon}</div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs text-muted-foreground">{link.label}</p>
-                  <p className="text-sm font-medium text-card-foreground">{link.value}</p>
+                  <p className="break-words text-sm font-medium text-card-foreground">{link.value}</p>
                 </div>
               </a>
             ))}
@@ -82,9 +82,18 @@ function ContactPage() {
           <div className="rounded-lg bg-muted/30 p-6">
             <h3 className="mb-2 text-sm font-semibold text-foreground">Availability</h3>
             <p className="text-sm text-muted-foreground">
-              I'm a Business Analytics & Economics student at Gonzaga University (graduating May 2028), actively seeking Data Analyst and Business Analyst internships and new-grad roles. I typically respond within 24 hours.
+              I study Business Analytics, Finance, and Economics at Gonzaga University, with a minor in Leadership Studies. I graduate in May 2028 and am interested in Data Analyst and Business Analyst opportunities.
             </p>
           </div>
+          <section className="mt-5 rounded-lg border border-border bg-card p-5" aria-labelledby="contact-topics">
+            <h2 id="contact-topics" className="text-base font-semibold text-foreground">What we can talk about</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+              <li>Internships and opportunities in analytics, consulting, or financial analysis.</li>
+              <li>SQL, Python, Power BI, or Excel projects and the business questions behind them.</li>
+              <li>New developments in AI, student experiences, or a shared interest in cooking and travel.</li>
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground">If you’re reaching out about a role or project, include a little context and a link so I can learn more.</p>
+          </section>
         </div>
       </div>
     </SectionWrapper>
