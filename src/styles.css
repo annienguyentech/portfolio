@@ -438,3 +438,31 @@
 @media (min-width: 768px) {
   .home-intro .page-section { padding-block: 3rem; }
 }
+
+
+.company-experience {
+  --company-accent: var(--primary);
+  --company-tint: var(--card);
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--company-accent);
+  border-radius: 1rem;
+  background: linear-gradient(110deg, var(--company-tint), var(--card) 80%);
+}
+.company-name { color: var(--company-accent); }
+.company-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 7.5rem;
+  height: 4rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e7e8e5;
+  border-radius: 0.75rem;
+}
+.company-logo img { width: 100%; height: 100%; object-fit: contain; }
+.company-logo img[data-company="Stanza"] { transform: scale(1.6); }
+.company-experience li::marker { color: var(--company-accent); }
+.dark .company-experience { background: var(--card); }
+.dark .company-name { color: var(--foreground); }
