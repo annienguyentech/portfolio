@@ -81,6 +81,8 @@ const featuredProjects = [
     slug: "xmas-gift-analysis",
     category: "SQL",
     title: "Xmas Gift Analysis",
+    previewImage: "/xmas-gift-analysis-preview.png",
+    previewAlt: "SQL queries analyzing Christmas sales by season, weekday, and hour",
     description:
       "A SQL analysis of 41,163 Christmas-season transactions across sales performance, customer behavior, products, markets, and purchase channels.",
     tags: ["SQL Server", "Data Analysis", "Business Insights"],
@@ -274,6 +276,18 @@ function Index() {
               className="group block h-full"
             >
               <article className="content-card flex h-full flex-col p-6">
+                {project.previewImage && (
+                  <div className="-mx-6 -mt-6 mb-5 overflow-hidden rounded-t-xl border-b border-border bg-white">
+                    <img
+                      src={project.previewImage}
+                      alt={project.previewAlt}
+                      className="aspect-[4/3] w-full object-contain"
+                      width="963"
+                      height="885"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <p className="text-xs font-bold uppercase tracking-wider text-primary">
                   {project.category}
                 </p>
