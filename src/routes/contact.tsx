@@ -1,3 +1,4 @@
+import { ContactForm } from "../components/ContactForm";
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
 import { Mail, Linkedin, Github, MapPin } from "lucide-react";
@@ -43,11 +44,11 @@ function ContactPage() {
       <div className="mb-12">
         <h1 className="mb-3 text-3xl font-bold text-foreground">Contact</h1>
         <p className="max-w-2xl text-muted-foreground">
-          I am open to Data Analyst, Business Analyst, and hybrid analytics roles. The easiest way to reach me is by email.
+          I am looking for opportunities in data analytics, business analytics, and financial analytics. The easiest way to reach me is by email.
         </p>
       </div>
 
-      <div className="grid gap-12 lg:grid-cols-2">
+      <div className="mb-8 flex flex-wrap gap-3">{["Data analytics", "Business analytics", "Financial analytics"].map((area) => <span key={area} className="tag">{area}</span>)}</div><div className="grid gap-8 lg:grid-cols-2">
         <div>
           <h2 className="mb-6 text-xl font-semibold text-foreground">Get in touch</h2>
           <div className="space-y-4">
@@ -78,8 +79,8 @@ function ContactPage() {
           </div>
         </div>
 
-        <div>
-          <div className="rounded-lg bg-muted/30 p-6">
+        <div><ContactForm />
+          <div className="mt-5 rounded-lg bg-muted/30 p-6">
             <h3 className="mb-2 text-sm font-semibold text-foreground">Availability</h3>
             <p className="text-sm text-muted-foreground">
               I study Business Analytics, Finance, and Economics at Gonzaga University, with a minor in Leadership Studies. I graduate in May 2028 and am interested in Data Analyst and Business Analyst opportunities.

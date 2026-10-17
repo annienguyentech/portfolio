@@ -67,17 +67,13 @@ const leadershipExamples = [
   },
   {
     icon: <Target className="h-5 w-5" />,
-    title: "Cross-Functional Project Leadership",
-    organization: "Credential Network and Stanza",
-    period: "2025",
-    highlights: [
-      "Collaborated with finance, marketing, and software engineering teams to translate business needs into dashboards, analytical systems, and product requirements.",
-      "Organized feedback from 100+ potential clients into clear product requirement documents for an AI drafting feature.",
-      "Communicated technical findings through practical recommendations that supported business and product decisions.",
-    ],
-    outcome:
-      "Helped reduce manual reporting time by more than 50% and product development rework by 30%.",
+    title: "Comprehensive Leadership Program",
+    organization: "Gonzaga University",
+    period: "Minor in Leadership Studies",
+    highlights: ["Studying leadership alongside Business Analytics, Finance, and Economics.", "Learning to reflect on my role in a team and support people with different perspectives.", "Connecting classroom learning with community and service."],
+    outcome: "I want to use my skills in ways that support both organizations and the people around them.",
   },
+
 ];
 
 const leadershipPrinciples = [
@@ -107,9 +103,7 @@ function LeadershipPage() {
         </h1>
 
         <p className="max-w-3xl leading-relaxed text-muted-foreground">
-          My leadership experience centers on mentoring students, coordinating
-          collaborative initiatives, and helping cross-functional teams turn
-          ideas into measurable outcomes.
+          My leadership experience centers on mentoring students, organizing cultural events, and learning how to serve my community through the Comprehensive Leadership Program.
         </p>
       </header>
 
@@ -119,7 +113,7 @@ function LeadershipPage() {
             key={example.title}
             className="flex flex-col rounded-lg border border-border bg-card p-6"
           >
-            <div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
+            <img src={example.title === "Peer Academic Coach" ? "/portfolio/coach-annie.webp" : example.title === "Head of Event Coordination" ? "/portfolio/vsa-annie.webp" : "/portfolio/clp-community.webp"} alt={example.title === "Peer Academic Coach" ? "Annie’s academic coaching profile" : example.title === "Head of Event Coordination" ? "Annie’s Vietnamese Student Association event leadership profile" : "Comprehensive Leadership Program community"} className="mb-5 h-56 w-full rounded-xl object-contain bg-muted/30" loading="lazy" /><div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
               {example.icon}
             </div>
 
@@ -152,7 +146,7 @@ function LeadershipPage() {
         ))}
       </div>
 
-      <section className="mt-16 rounded-lg border border-border bg-muted/30 p-6 md:p-8">
+      <div className="mt-6 flex flex-wrap gap-5"><a className="text-link" href="https://www.instagram.com/gu_vsa/" target="_blank" rel="noopener noreferrer">VSA on Instagram ↗</a><a className="text-link" href="https://www.gonzaga.edu/school-of-leadership-studies/academics/comprehensive-leadership-program" target="_blank" rel="noopener noreferrer">Explore the Comprehensive Leadership Program ↗</a></div><section className="mt-10"><h2 className="mb-5 text-2xl font-semibold">Community in pictures</h2><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{[["vsa-stage", "Cultural performances"], ["vsa-community", "Vietnamese Student Association community"], ["vsa-event", "Sharing culture on campus"], ["clp-friends", "Learning alongside friends"], ["learning-studio", "Learning Studio community"]].map(([image, caption]) => <figure key={image}><a href={`/portfolio/${image}.webp`} target="_blank" rel="noopener noreferrer"><img src={`/portfolio/${image}.webp`} alt={caption} className="h-56 w-full rounded-xl object-contain bg-muted/30" loading="lazy" /></a><figcaption className="mt-2 text-sm text-muted-foreground">{caption}</figcaption></figure>)}</div></section><section className="mt-16 rounded-lg border border-border bg-muted/30 p-6 md:p-8">
         <div className="mb-8">
           <h2 className="mb-3 text-xl font-semibold text-foreground">
             Leadership Philosophy

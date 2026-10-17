@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
-import { GraduationCap, MapPin, Mail, Globe } from "lucide-react";
+import { GraduationCap, MapPin, Mail, Heart, Cpu, Crown, Compass } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -65,10 +65,6 @@ const education = {
 const quickFacts = [
   { icon: <MapPin className="h-4 w-4" />, label: "Based in Spokane, WA" },
   {
-    icon: <Globe className="h-4 w-4" />,
-    label: "Originally from Hanoi, Vietnam",
-  },
-  {
     icon: <GraduationCap className="h-4 w-4" />,
     label: "Graduating May 2028",
   },
@@ -96,10 +92,7 @@ function AboutPage() {
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
         <div className="space-y-5 leading-relaxed text-muted-foreground">
           <p>
-            I grew up in Hanoi, Vietnam, and moved to Spokane to study business
-            analytics. Along the way, I have worked across financial analysis,
-            business consulting, product and marketing analytics, and community
-            programs at Gonzaga's Center for Community Engagement.
+            I chose to study Business Analytics alongside Finance and Economics to strengthen my analytical thinking and problem solving skills. I enjoy understanding both the numbers and the people affected by a decision.
           </p>
 
           <p>
@@ -152,32 +145,36 @@ function AboutPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             {[
               {
+                icon: <Heart />,
                 label: "Off the clock",
-                title: "Cooking & conversation",
+                title: "Cooking and community",
                 description:
-                  "I enjoy cooking and getting to know people. Outside of class and work, a good conversation is one of my favorite ways to spend time.",
+                  "I love cooking and being around people. Sharing a meal, listening, and helping someone feel welcome are small ways I care for my community.",
               },
               {
+                icon: <Cpu />,
                 label: "Following along",
                 title: "What’s new in AI?",
                 description:
-                  "I keep up with AI news and new developments. I’m curious about what’s useful today and what might change how we work next.",
+                  "I read about AI and technology to keep up with new tools. My view is simple: AI should help people work more efficiently and leave more room for thoughtful work.",
               },
               {
-                label: "Once you know me",
-                title: "A gentle first impression",
+                icon: <Crown />,
+                label: "A familiar challenge",
+                title: "Chess, since childhood",
                 description:
-                  "I may seem quiet at first, but I’m direct and have a point of view. I enjoy conversations where we can share different perspectives.",
+                  "I grew up playing chess with my dad. I still play with friends and on my phone, and I attend chess club every week.",
               },
               {
+                icon: <Compass />,
                 label: "A fun fact",
                 title: "10 cities. About a month.",
                 description:
-                  "I once visited ten different cities in about a month. Ask me about that trip when we meet.",
+                  "I once visited ten cities in the United States in about a month. I enjoy seeing how each place has its own pace and personality.",
               },
             ].map((detail) => (
               <article key={detail.title} className="personal-note h-full p-6 md:p-8">
-                <p className="text-sm font-medium text-primary">
+                <div className="mb-4 text-primary">{detail.icon}</div><p className="text-sm font-medium text-primary">
                   {detail.label}
                 </p>
                 <h3 className="mt-3 text-lg font-semibold text-card-foreground">
@@ -193,7 +190,7 @@ function AboutPage() {
       </section>
 
       <section className="mt-16">
-        <h2 className="mb-6 text-2xl font-bold text-foreground">Education</h2>
+        <h2 className="mb-6 text-2xl font-bold text-foreground">Education</h2><figure className="mb-6 overflow-hidden rounded-2xl"><img src="/portfolio/gonzaga-campus.webp" alt="Gonzaga University campus" className="max-h-80 w-full object-cover" loading="lazy" /><figcaption className="mt-2 text-sm text-muted-foreground">Gonzaga University · <a href="https://www.gonzaga.edu/about/our-campus-location" target="_blank" rel="noopener noreferrer" className="underline">Campus photography</a></figcaption></figure>
 
         <article className="rounded-xl border border-border bg-card p-6 md:p-8">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-start">
@@ -238,7 +235,7 @@ function AboutPage() {
             ))}
           </div>
 
-          <div className="mt-6 rounded-lg border border-dashed border-border bg-background p-5">
+          <div className="mt-6 rounded-lg border border-border bg-background p-5"><img src="/portfolio/clp-program.webp" alt="Gonzaga Comprehensive Leadership Program students taking part in global learning" className="mb-5 max-h-64 w-full rounded-xl object-cover" loading="lazy" /><a href="https://www.gonzaga.edu/school-of-leadership-studies/academics/comprehensive-leadership-program" target="_blank" rel="noopener noreferrer" className="text-link mb-4">Comprehensive Leadership Program ↗</a>
             <span className="inline-block rounded bg-muted px-2 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               {education.minor.type}
             </span>

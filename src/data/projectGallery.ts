@@ -102,7 +102,7 @@ export const projectGallery: Record<string, GalleryItem[]> = {
 
   "customer-behavior-and-segmentation-analysis": [
     {
-      src: raw("customer-behavior-and-segmentation-analysis", "KPIM Mart Background.jpg"),
+      src: "/portfolio/customers.webp",
       caption: "KPIM Mart customer segmentation dashboard",
     },
   ],

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CompanyLogo, companyBrandStyle } from "../components/CompanyLogo";
+import { ExperienceStory } from "../components/ExperienceStory";
 import { SectionWrapper } from "../components/SectionWrapper";
 
 export const Route = createFileRoute("/experience")({
@@ -47,28 +48,17 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: "KPIM",
-    location: "Remote",
-    role: "Data Analytics Intern",
-    period: "January 2027 - March 2027",
-    achievements: [
-      "Incoming Data Analytics Intern.",
-    ],
-  },
-  {
-    company: "Auspify Technologies",
-    location: "Remote",
-    role: "Data Analysis Intern",
-    period: "June 2026 - August 2026",
-    achievements: [
-      "Incoming Data Analysis Intern.",
-    ],
+    company: "Zag Business + Tech",
+    location: "Gonzaga University",
+    role: "Smartsheet Automation Project for Essenza",
+    period: "October 2026 to Present",
+    achievements: ["Working with Essenza to design, test, and implement automation workflows in Smartsheet through Zag Business + Tech."],
   },
   {
     company: "Gonzaga University, Center for Community Engagement",
     location: "Spokane, WA",
     role: "Administrative Assistant",
-    period: "August 2025 - Present",
+    period: "August 2025 to May 2026",
     achievements: [
       "Managed volunteer program tracking by monitoring an internal database system and maintaining current records for 100+ student volunteers and staff across 10+ projects.",
       "Supported communication through email, phone outreach, and cross-team collaboration, ensuring timely delivery of program requirements and completion of deadlines.",
@@ -116,16 +106,7 @@ const experiences: Experience[] = [
       "Analyzed credit trends among Vietnamese SMEs valued from $1 million to $20 million by monitoring overdue and bad-debt expenses, identifying lending gaps, and assessing policy changes, supporting a partnership with the OPEC Fund to expand financing for 500,000 SMEs in Vietnam.",
     ],
   },
-  {
-    company: "Petrolimex",
-    location: "Haiphong, Vietnam",
-    role: "Business Development Intern",
-    period: "December 2023 - January 2024",
-    achievements: [
-      "Researched rural fuel consumption patterns and tested alternative sales models, providing insights from 500 households that informed infrastructure investment and market entry decisions.",
-      "Partnered with the accounting team to evaluate revenue streams and operational cost drivers for downstream projects, improving margin forecast accuracy and informing an updated pricing strategy.",
-    ],
-  },
+
 ];
 
 function ExperiencePage() {
@@ -133,7 +114,7 @@ function ExperiencePage() {
     <SectionWrapper>
       <header className="mb-12">
         <h1 className="mb-3 text-3xl font-bold text-foreground">
-          Professional Experience
+          Experience
         </h1>
 
         <p className="max-w-3xl leading-relaxed text-muted-foreground">
@@ -151,8 +132,8 @@ function ExperiencePage() {
             className="company-experience p-5 md:p-6"
             style={companyBrandStyle(experience.company)}
           >
-            <div className="mb-4 flex flex-wrap items-center gap-4">
-              <CompanyLogo company={experience.company} />
+            {experience.company.startsWith("Gonzaga University") && <img src={experience.company.includes("Community Engagement") ? "/portfolio/cce-community.webp" : "/portfolio/learning-studio.webp"} alt={experience.company.includes("Community Engagement") ? "Gonzaga community engagement in action" : "Gonzaga Learning Studio community"} className="mb-5 max-h-64 w-full rounded-xl object-cover" loading="lazy" />}<div className="mb-4 flex flex-wrap items-center gap-4">
+              {!experience.company.startsWith("Gonzaga University") && <CompanyLogo company={experience.company} />}
               <p className="company-name min-w-0 flex-1 font-semibold">{experience.company}</p>
             </div>
             <div className="mb-4 flex flex-col justify-between gap-3 md:flex-row md:items-start">
@@ -181,6 +162,7 @@ function ExperiencePage() {
                 </li>
               ))}
             </ul>
+            <ExperienceStory company={experience.company} />
           </article>
         ))}
       </div>

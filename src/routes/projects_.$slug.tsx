@@ -1,3 +1,5 @@
+import { projectReadmes } from "../data/projectReadmes";
+import { ReadmeContent } from "../components/ReadmeContent";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
 import { projectGallery } from "../data/projectGallery";
@@ -8,6 +10,7 @@ import {
   CheckCircle2,
   Database,
   Github,
+  FileText,
   Image as ImageIcon,
 
   Lightbulb,
@@ -53,6 +56,16 @@ interface ProjectDetails {
 }
 
 const projectDetails: Record<string, ProjectDetails> = {
+  "customer-behavior-and-segmentation-analysis": {
+    title: "Customer Behavior and Segmentation Analysis",
+    category: "Power BI and Customer Analytics",
+    summary: "An interactive Power BI dashboard exploring purchasing behavior through Recency, Frequency, and Monetary value.",
+    challenge: "Organize customer behavior into meaningful segments to support business decisions.",
+    objectives: ["Compare customer behavior across RFM segments."],
+    process: ["Analyzed customer purchasing behavior and presented segment comparisons in Power BI."],
+    results: ["Created a dashboard for exploring customer segments and their contribution to performance."],
+    tools: ["Power BI", "DAX", "Power Query", "RFM Analysis"],
+  },
   "xmas-gift-analysis": {
     title: "Xmas Gift Analysis",
     category: "SQL and Business Analysis Project",
@@ -307,8 +320,10 @@ const projectRepositories: Record<string, string> = {
 function ProjectDetailsPage() {
   const { slug } = Route.useParams();
   const project = projectDetails[slug];
+  const readme = projectReadmes[slug];
   const repositoryUrl = projectRepositories[slug];
   const gallery = projectGallery[slug];
+  const preview = ({ "xmas-gift-analysis": "xmas", "revenue-plan-progress-analysis": "revenue", "customer-behavior-and-segmentation-analysis": "customers", "kpim-mart-sales-excel-dashboard": "excel" } as Record<string, string>)[slug];
 
 
   if (!project) {
@@ -361,6 +376,7 @@ function ProjectDetailsPage() {
 
       <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
         <main className="space-y-12">
+          {preview && <a href={`/portfolio/${preview}.webp`} target="_blank" rel="noopener noreferrer"><img src={`/portfolio/${preview}.webp`} alt={`${project.title} preview`} className="w-full rounded-xl border border-border bg-white object-contain" /></a>}
           {readme ? (
             <ProjectSection
               icon={<FileText className="h-5 w-5" />}

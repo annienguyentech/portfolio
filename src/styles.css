@@ -466,3 +466,11 @@
 .company-experience li::marker { color: var(--company-accent); }
 .dark .company-experience { background: var(--card); }
 .dark .company-name { color: var(--foreground); }
+
+/* Portfolio brief: restrained navy, real work, and readable visual stories. */
+.portrait-circle { aspect-ratio: 1; overflow: hidden; border-radius: 50%; padding: 0; background: #f5f7fa; border: 7px solid white; box-shadow: 0 0 0 1px #e1e6ed, 0 16px 40px #172b4d12; }
+.contact-form label { font-size: .875rem; font-weight: 600; }
+.contact-form input, .contact-form textarea { display: block; width: 100%; margin-top: .5rem; padding: .75rem; border: 1px solid #ccd5e1; border-radius: .6rem; background: white; color: #172b4d; font: inherit; font-weight: 400; }
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid #2457a7; outline-offset: 2px; }
+.media-story summary::marker { color: #2457a7; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }

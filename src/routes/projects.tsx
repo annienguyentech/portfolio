@@ -38,6 +38,7 @@ export const Route = createFileRoute("/projects")({
 });
 
 const projects = [
+  {slug: "customer-behavior-and-segmentation-analysis", title: "Customer Behavior and Segmentation Analysis", category: "Customer Analytics", description: "Exploring customer groups, revenue contribution, and purchasing patterns in an interactive dashboard.", tags: ["Customer Segmentation", "Dashboard Design"], outcome: "A visual overview of customer composition and purchasing behavior."},
   {
     slug: "xmas-gift-analysis",
     title: "Xmas Gift Analysis",

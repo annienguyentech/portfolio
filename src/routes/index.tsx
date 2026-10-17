@@ -1,3 +1,4 @@
+import { Workflow } from "../components/Workflow";
 import type { ReactNode } from "react";
 import { CompanyLogo, companyBrandStyle } from "../components/CompanyLogo";
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -78,39 +79,55 @@ const strengths = [
 
 const featuredProjects = [
   {
-    slug: "xmas-gift-analysis",
-    category: "SQL",
-    title: "Xmas Gift Analysis",
-    previewImage: "/xmas-gift-analysis-preview.png",
-    previewAlt: "SQL queries analyzing Christmas sales by season, weekday, and hour",
-    description:
-      "A SQL analysis of 41,163 Christmas-season transactions across sales performance, customer behavior, products, markets, and purchase channels.",
-    tags: ["SQL Server", "Data Analysis", "Business Insights"],
+    "slug": "xmas-gift-analysis",
+    "category": "SQL",
+    "title": "Xmas Gift Analysis",
+    "previewImage": "/portfolio/xmas.webp",
+    "previewAlt": "SQL queries exploring Christmas sales patterns",
+    "description": "Exploring seasonal sales, customer behavior, and shopping patterns through SQL.",
+    "tags": [
+      "SQL Server",
+      "Business Analysis"
+    ]
   },
   {
-    slug: "revenue-plan-progress-analysis",
-    category: "Power BI",
-    title: "Revenue Plan Progress Analysis",
-    description:
-      "An interactive dashboard comparing actual and planned revenue across stores, products, customers, and promotions.",
-    tags: ["Power BI", "DAX", "Power Query"],
+    "slug": "revenue-plan-progress-analysis",
+    "category": "Power BI",
+    "title": "Revenue Plan Progress Analysis",
+    "previewImage": "/portfolio/revenue.webp",
+    "previewAlt": "Revenue plan dashboard with actual revenue and performance by store",
+    "description": "An interactive view of revenue performance, targets, and the drivers behind the results.",
+    "tags": [
+      "Power BI",
+      "DAX",
+      "Power Query"
+    ]
   },
   {
-    slug: "sales-optimization-analysis",
-    category: "SQL",
-    title: "Sales Optimization Analysis",
-    description:
-      "A relational airline sales database used to analyze route demand, capacity utilization, and promotion performance.",
-    tags: ["SQL", "ERD", "Data Modeling"],
+    "slug": "customer-behavior-and-segmentation-analysis",
+    "category": "Customer Analytics",
+    "title": "Customer Behavior and Segmentation Analysis",
+    "previewImage": "/portfolio/customers.webp",
+    "previewAlt": "Customer analysis dashboard with customer groups and purchasing patterns",
+    "description": "A dashboard exploring customer groups and purchasing behavior to support more focused business decisions.",
+    "tags": [
+      "Customer Segmentation",
+      "Dashboard Design"
+    ]
   },
   {
-    slug: "marketing-campaign-response-prediction",
-    category: "Machine Learning",
-    title: "Marketing Campaign Response Prediction",
-    description:
-      "A Python classification model that estimates customer campaign response and supports targeted marketing.",
-    tags: ["Python", "Scikit-learn", "Logistic Regression"],
-  },
+    "slug": "kpim-mart-sales-excel-dashboard",
+    "category": "Excel",
+    "title": "KPIM Mart Sales Excel Dashboard",
+    "previewImage": "/portfolio/excel.webp",
+    "previewAlt": "Excel sales dashboard with revenue trends and product performance",
+    "description": "Sales, profit, and store performance brought together in an interactive Excel dashboard.",
+    "tags": [
+      "Excel",
+      "Power Query",
+      "PivotTables"
+    ]
+  }
 ];
 
 function Index() {
@@ -176,11 +193,11 @@ function Index() {
               </div>
             </div>
 
-            <figure className="portrait-frame mx-auto w-full max-w-sm">
+            <figure className="portrait-frame portrait-circle mx-auto w-full max-w-sm">
               <img
-                src="/annie-profile.jpg"
+                src="/portfolio/annie-portrait.png"
                 alt="Portrait of Annie Nguyen"
-                className="aspect-square w-full rounded-2xl object-cover object-bottom"
+                className="aspect-square w-full rounded-full object-cover object-[50%_72%] scale-[1.85]"
               />
             </figure>
           </div>
@@ -223,7 +240,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="mb-10 flex flex-wrap items-center gap-2" aria-label="Tools I work with">
+          <Workflow /><div className="mb-10 flex flex-wrap items-center gap-2" aria-label="Tools I work with">
             <span className="mr-2 text-sm text-muted-foreground">Tools I work with</span>
             {skills.map((skill) => (
               <span key={skill} className="tag">{skill}</span>
@@ -267,7 +284,7 @@ function Index() {
           </Link>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {featuredProjects.map((project) => (
             <Link
               key={project.slug}
@@ -330,12 +347,11 @@ function Index() {
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
               <h2 className="text-2xl font-bold text-foreground">
-                Let’s start a conversation.
+                Opportunities in analytics
               </h2>
 
               <p className="mt-2 max-w-2xl text-muted-foreground">
-                Have an analytics opportunity, an interesting project, or an AI
-                story to share? I’d love to hear from you.
+                I am looking for opportunities in data analytics, business analytics, and financial analytics. Thank you for considering my work. Please contact me at annienguyengu@gmail.com.
               </p>
             </div>
 
@@ -360,7 +376,7 @@ function StrengthCard({
   description: string;
 }) {
   return (
-    <article className="capability-note p-2">
+    <article className="capability-note rounded-2xl border border-border bg-white p-6">
       <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
         {icon}
       </div>

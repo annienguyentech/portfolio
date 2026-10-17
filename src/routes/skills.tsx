@@ -1,3 +1,4 @@
+import { Workflow } from "../components/Workflow";
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
 import { Award } from "lucide-react";
@@ -83,11 +84,11 @@ function SkillsPage() {
         </p>
       </header>
 
-      <section className="mb-16">
+      <Workflow /><section className="mb-16">
         <h2 className="mb-6 text-xl font-semibold text-foreground">Skills</h2>
         <div className="grid gap-8 md:grid-cols-2">
           {skillGroups.map((group) => (
-            <div key={group.title}>
+            <div key={group.title} className="rounded-2xl border border-border bg-muted/30 p-6">
               <h3 className="mb-3 text-sm font-semibold text-primary">
                 {group.title}
               </h3>
