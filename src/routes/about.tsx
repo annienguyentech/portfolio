@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Learn about Annie Nguyen, a Business Analytics and Economics student at Gonzaga University focused on data analytics and business analysis.",
+          "Learn about Annie Nguyen, a Business Analytics, Finance, and Economics student at Gonzaga University focused on data analytics and business analysis.",
       },
       { property: "og:title", content: "About | Annie Nguyen" },
       {
@@ -30,7 +30,7 @@ const education = {
   period: "August 2023 - May 2028",
   degrees: [
     {
-      title: "Bachelor of Business Administration in Business Analytics",
+      title: "Bachelor of Business Administration in Business Analytics & Finance",
       type: "Major",
       highlights: [
         "Database Management",
@@ -86,7 +86,7 @@ function AboutPage() {
         </h1>
 
         <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          I'm a dual-degree student in Business Analytics and Economics at
+          I study Business Analytics, Finance, and Economics at
           Gonzaga University, with a minor in Leadership Studies. I enjoy
           turning messy data into clear stories that help teams make better
           decisions.
@@ -136,6 +136,61 @@ function AboutPage() {
           </ul>
         </aside>
       </div>
+
+      <section id="about-me" aria-labelledby="about-me-heading" className="personal-section mt-16 scroll-mt-24 pt-12">
+        <div>
+          <div className="mb-8 max-w-2xl">
+            <p className="eyebrow mb-4">A little more about me</p>
+            <h2 id="about-me-heading" className="text-3xl font-bold text-foreground">
+              Beyond the spreadsheets
+            </h2>
+            <p className="mt-3 text-muted-foreground">
+              A few things you won’t find on my resume.
+            </p>
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            {[
+              {
+                label: "Off the clock",
+                title: "Cooking & conversation",
+                description:
+                  "I enjoy cooking and getting to know people. Outside of class and work, a good conversation is one of my favorite ways to spend time.",
+              },
+              {
+                label: "Following along",
+                title: "What’s new in AI?",
+                description:
+                  "I keep up with AI news and new developments. I’m curious about what’s useful today and what might change how we work next.",
+              },
+              {
+                label: "Once you know me",
+                title: "A gentle first impression",
+                description:
+                  "I may seem quiet at first, but I’m direct and have a point of view. I enjoy conversations where we can share different perspectives.",
+              },
+              {
+                label: "A fun fact",
+                title: "10 cities. About a month.",
+                description:
+                  "I once visited ten different cities in about a month. Ask me about that trip when we meet.",
+              },
+            ].map((detail) => (
+              <article key={detail.title} className="personal-note h-full p-6 md:p-8">
+                <p className="text-sm font-medium text-primary">
+                  {detail.label}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold text-card-foreground">
+                  {detail.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {detail.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="mt-16">
         <h2 className="mb-6 text-2xl font-bold text-foreground">Education</h2>
