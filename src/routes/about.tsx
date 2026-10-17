@@ -128,19 +128,19 @@ function AboutPage() {
       </div>
 
       <section className="mt-10 grid gap-5 sm:grid-cols-2" aria-label="Personal photos of Annie">
-        <figure>
+        <figure className="aspect-[4/5] overflow-hidden rounded-2xl">
           <img
             src="/portfolio/case-studies/annie-outdoors.webp"
             alt="Annie outdoors"
-            className="h-auto w-full rounded-2xl"
+            className="h-full w-full object-cover object-[50%_35%]"
             loading="lazy"
           />
         </figure>
-        <figure>
+        <figure className="aspect-[4/5] overflow-hidden rounded-2xl">
           <img
             src="/portfolio/case-studies/annie-evening.webp"
             alt="Annie at an evening event"
-            className="h-auto w-full rounded-2xl"
+            className="h-full w-full object-cover object-[50%_35%]"
             loading="lazy"
           />
         </figure>

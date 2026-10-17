@@ -2,8 +2,8 @@ import { ArrowRight, Database, FileChartColumn, Workflow } from "lucide-react";
 const base = "/portfolio/case-studies/";
 const visuals: Record<string, [string, string]> = {
   "Zag Business + Tech": [
-    `${base}essenza.webp`,
-    "Essenza product photography from the company website",
+    `${base}essenza-wide.jpg`,
+    "Essenza brand photography from the company website",
   ],
   "Gonzaga University, Center for Community Engagement": [
     "/portfolio/cce-community.webp",
@@ -14,10 +14,10 @@ const visuals: Record<string, [string, string]> = {
     "Gonzaga Academic Coaching and Tutoring community",
   ],
   "Credential Network": [
-    "/portfolio/nvl-team.webp",
-    "Gonzaga New Venture Lab consulting community",
+    `${base}gonzaga-entrepreneurship.jpg`,
+    "Gonzaga entrepreneurship community",
   ],
-  Stanza: [`${base}stanza-website.png`, "Stanza company website preview"],
+  Stanza: [`${base}stanza-services.jpg`, "Professional services imagery from the Stanza website"],
   "MSB Bank": [`${base}msb-official.jpg`, "MSB photography from the company website"],
 };
 const links: Record<string, [string, string][]> = {
@@ -51,7 +51,7 @@ export function ExperienceHero({ company }: { company: string }) {
       <img
         src={visual[0]}
         alt={visual[1]}
-        className="h-auto max-h-[25rem] w-full object-contain"
+        className="aspect-[16/7] w-full object-cover"
         loading="lazy"
       />
       <figcaption className="border-t border-border px-4 py-2 text-xs text-muted-foreground">
@@ -76,7 +76,7 @@ export function ExperienceMedia({ company }: { company: string }) {
           </a>
         ))}
       </div>
-      <section className="experience-media-box mt-5" aria-label={`${company} work`}>
+      {!company.includes("Academic Success") && (<section className="experience-media-box mt-5" aria-label={`${company} work`}>
         <h3 className="mb-4 font-semibold">
           {company === "Credential Network"
             ? "Consulting report"
@@ -107,14 +107,6 @@ export function ExperienceMedia({ company }: { company: string }) {
               </figure>
             ))}
           </div>
-        )}
-        {company.includes("Academic Success") && (
-          <iframe
-            src={`${base}coaching-workshop.html`}
-            title="Academic coaching workshop slides"
-            className="h-[36rem] w-full rounded-xl border border-border bg-white"
-            loading="lazy"
-          />
         )}
         {company === "Stanza" && (
           <div className="grid gap-5 md:grid-cols-2">
@@ -189,7 +181,7 @@ export function ExperienceMedia({ company }: { company: string }) {
             </div>
           </div>
         )}
-      </section>
+      </section>)}
     </div>
   );
 }

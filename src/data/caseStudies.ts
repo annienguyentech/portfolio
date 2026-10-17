@@ -37,9 +37,21 @@ export const extraProjects = {
 };
 
 export const codeNotes: Record<string, string[]> = {
-  "xmas-gift-analysis": ["The analytical view combines the fields needed for the sales questions in one place.", "Using the same view across queries helps keep time, customer, product, and market definitions consistent.", "Validate joins and transaction counts before comparing revenue or profit across groups."],
-  "sales-optimization-analysis": ["The query counts distinct bookings by campaign, discount, and target customer segment.", "Blank campaign identifiers are excluded so they do not distort the promotion ranking.", "Use campaign frequency alongside revenue and margin. Frequent use alone does not establish that a promotion is profitable."],
-  "marketing-campaign-response-prediction": ["Balanced class weights address the smaller response class during model training.", "Predictions are evaluated on held out test data rather than the training sample.", "Review response precision and recall, then test decision thresholds against the cost of outreach."],
+  "xmas-gift-analysis": [
+    "The analytical view combines the fields needed for the sales questions in one place.",
+    "Using the same view across queries helps keep time, customer, product, and market definitions consistent.",
+    "Validate joins and transaction counts before comparing revenue or profit across groups.",
+  ],
+  "sales-optimization-analysis": [
+    "The query counts distinct bookings by campaign, discount, and target customer segment.",
+    "Blank campaign identifiers are excluded so they do not distort the promotion ranking.",
+    "Use campaign frequency alongside revenue and margin. Frequent use alone does not establish that a promotion is profitable.",
+  ],
+  "marketing-campaign-response-prediction": [
+    "Balanced class weights address the smaller response class during model training.",
+    "Predictions are evaluated on held out test data rather than the training sample.",
+    "Review response precision and recall, then test decision thresholds against the cost of outreach.",
+  ],
 };
 
 export const caseExhibits: Record<string, Exhibit[]> = {
@@ -241,11 +253,45 @@ caseExhibits["capital-one-case-competition"] = capitalNotes.map(([title, points]
 );
 
 caseExhibits["costco-financial-modeling"] = [
-  exhibit("Cash flow model preview", "costco", [
-    "The workbook connects operating, investing, and financing cash flows to the forecast cash balance.",
-    "Projected values are driven by assumptions and should be read as model outputs rather than guaranteed outcomes.",
-    "Review the assumptions and statement checks before using the model to support a financial decision.",
-  ]),
+  {
+    title: "Income statement",
+    image: "/portfolio/case-studies/costco-income.svg",
+    alt: "Costco income statement from the source workbook",
+    points: [
+      "The model separates merchandise sales from membership fees.",
+      "Forecast growth, costs, taxes, and dividends flow through to net income and retained earnings.",
+      "Compare growth and margin assumptions before interpreting changes in projected profit.",
+    ],
+  },
+  {
+    title: "Balance sheet",
+    image: "/portfolio/case-studies/costco-balance.svg",
+    alt: "Costco balance sheet from the source workbook",
+    points: [
+      "The balance sheet connects working capital, property and equipment, financing, and equity.",
+      "The source workbook includes a balance sheet check with small nonzero differences in forecast periods.",
+      "Reconcile the statement check before treating the model as finalized.",
+    ],
+  },
+  {
+    title: "Cash flow statement",
+    image: "/portfolio/case-studies/costco-cash-flow.svg",
+    alt: "Costco statement of cash flows from the source workbook",
+    points: [
+      "Operating cash flow starts from net income and adjusts for depreciation and working capital.",
+      "Capital expenditure, debt changes, dividends, and repurchases explain the movements in cash.",
+      "Compare the projected cash balance with the minimum cash assumption before considering further financing.",
+    ],
+  },
 ];
+caseExhibits["xmas-gift-analysis"][0].image = "/portfolio/case-studies/xmas-season-results.svg";
+caseExhibits["xmas-gift-analysis"][1].image = "/portfolio/case-studies/xmas-channel-results.svg";
+caseExhibits["xmas-gift-analysis"][2].image = "/portfolio/case-studies/xmas-product-results.svg";
+caseExhibits["sales-optimization-analysis"][1].image = "/portfolio/case-studies/sales-capacity.svg";
+caseExhibits["marketing-campaign-response-prediction"][0].image =
+  "/portfolio/case-studies/marketing-distributions.svg";
+caseExhibits["marketing-campaign-response-prediction"][1].image =
+  "/portfolio/case-studies/marketing-evaluation.svg";
 
-caseExhibits["costco-financial-modeling"][0].image = "/portfolio/case-studies/costco-model.svg";
+caseExhibits["sales-optimization-analysis"][0].image =
+  "/portfolio/case-studies/sales-data-model.svg";

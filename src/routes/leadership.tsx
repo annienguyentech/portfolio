@@ -96,127 +96,102 @@ const leadershipPrinciples = [
   },
 ];
 
+const rolePhotos: Record<string, [string, string][]> = {
+  "Peer Academic Coach": [
+    [
+      "/portfolio/case-studies/academic-support.webp",
+      "Gonzaga Academic Coaching and Tutoring community",
+    ],
+    ["/portfolio/case-studies/academic-coaching-photo.jpg", "Academic coaching at Gonzaga"],
+  ],
+  "Head of Event Coordination": [
+    ["/portfolio/vsa-stage.webp", "Vietnamese Student Association cultural performance"],
+    ["/portfolio/vsa-event.webp", "Sharing culture through community activities"],
+  ],
+  "Comprehensive Leadership Program": [
+    ["/portfolio/clp-community.webp", "My Gonzaga leadership community"],
+    ["/portfolio/clp-friends.webp", "Learning alongside friends"],
+  ],
+};
 function LeadershipPage() {
   return (
     <SectionWrapper>
-      <header className="mb-12">
-        <h1 className="mb-3 text-3xl font-bold text-foreground">Leadership and Community Impact</h1>
-
+      <header className="mb-8">
+        <h1 className="mb-3 text-3xl font-semibold">Leadership and Community Impact</h1>
         <p className="max-w-3xl leading-relaxed text-muted-foreground">
           My leadership experience centers on mentoring students, organizing cultural events, and
           learning how to serve my community through the Comprehensive Leadership Program.
         </p>
       </header>
-
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="space-y-8">
         {leadershipExamples.map((example) => (
           <article
             key={example.title}
-            className="flex flex-col rounded-lg border border-border bg-card p-6"
+            className="rounded-2xl border border-border bg-white p-5 md:p-7"
           >
-            <img
-              src={
-                example.title === "Peer Academic Coach"
-                  ? "/portfolio/coach-annie.webp"
-                  : example.title === "Head of Event Coordination"
-                    ? "/portfolio/vsa-stage.webp"
-                    : "/portfolio/clp-community.webp"
-              }
-              alt={
-                example.title === "Peer Academic Coach"
-                  ? "Annie’s academic coaching profile"
-                  : example.title === "Head of Event Coordination"
-                    ? "Vietnamese Student Association cultural performance"
-                    : "Comprehensive Leadership Program community"
-              }
-              className="mb-5 h-56 w-full rounded-xl object-contain bg-muted/30"
-              loading="lazy"
-            />
-            <div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
-              {example.icon}
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <div className="mb-3 text-primary">{example.icon}</div>
+                <h2 className="text-2xl font-semibold">{example.title}</h2>
+                <p className="mt-2 font-medium text-primary">{example.organization}</p>
+              </div>
+              <p className="text-sm text-muted-foreground">{example.period}</p>
             </div>
-
-            <h2 className="text-lg font-semibold text-card-foreground">{example.title}</h2>
-
-            <p className="mt-1 text-sm font-medium text-primary">{example.organization}</p>
-
-            <p className="mt-1 text-sm text-muted-foreground">{example.period}</p>
-
-            <ul className="mt-5 list-disc space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground marker:text-primary">
-              {example.highlights.map((highlight) => (
-                <li key={highlight} className="pl-1">
-                  {highlight}
-                </li>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2">
+              {rolePhotos[example.title].map(([src, caption]) => (
+                <figure key={src} className="overflow-hidden rounded-xl border border-border">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src={src}
+                      alt={caption}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
+                    {caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <ul className="mt-6 list-disc space-y-3 pl-5 leading-relaxed text-muted-foreground">
+              {example.highlights.map((point) => (
+                <li key={point}>{point}</li>
               ))}
             </ul>
-
-            <div className="mt-auto pt-6">
-              <p className="border-t border-border pt-4 text-sm font-medium leading-relaxed text-primary">
-                {example.outcome}
-              </p>
-            </div>
+            <p className="mt-6 border-t border-border pt-5 font-medium leading-relaxed text-primary">
+              {example.outcome}
+            </p>
+            {example.title === "Head of Event Coordination" && (
+              <a
+                className="text-link mt-4"
+                href="https://www.instagram.com/gu_vsa/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VSA on Instagram ↗
+              </a>
+            )}
+            {example.title === "Comprehensive Leadership Program" && (
+              <a
+                className="text-link mt-4"
+                href="https://www.gonzaga.edu/school-of-leadership-studies/academics/comprehensive-leadership-program"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore the program ↗
+              </a>
+            )}
           </article>
         ))}
       </div>
-
-      <div className="mt-6 flex flex-wrap gap-5">
-        <a
-          className="text-link"
-          href="https://www.instagram.com/gu_vsa/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          VSA on Instagram ↗
-        </a>
-        <a
-          className="text-link"
-          href="https://www.gonzaga.edu/school-of-leadership-studies/academics/comprehensive-leadership-program"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Explore the Comprehensive Leadership Program ↗
-        </a>
-      </div>
-      <section className="mt-10">
-        <h2 className="mb-5 text-2xl font-semibold">Community in pictures</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            ["vsa-stage", "Cultural performances"],
-            ["vsa-community", "Vietnamese Student Association community"],
-            ["vsa-event", "Sharing culture on campus"],
-            ["clp-friends", "Learning alongside friends"],
-            ["clp-community", "Gonzaga community"],
-          ].map(([image, caption]) => (
-            <figure key={image}>
-              <a href={`/portfolio/${image}.webp`} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={`/portfolio/${image}.webp`}
-                  alt={caption}
-                  className="h-56 w-full rounded-xl object-contain bg-muted/30"
-                  loading="lazy"
-                />
-              </a>
-              <figcaption className="mt-2 text-sm text-muted-foreground">{caption}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-      <section className="mt-16 rounded-lg border border-border bg-muted/30 p-6 md:p-8">
-        <div className="mb-8">
-          <h2 className="mb-3 text-xl font-semibold text-foreground">Leadership Philosophy</h2>
-
-          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            I approach leadership as the responsibility to create clarity, support others, and move
-            a team toward meaningful results.
-          </p>
-        </div>
-
+      <section className="mt-10 rounded-2xl bg-muted/40 p-6">
+        <h2 className="mb-5 text-2xl font-semibold">Leadership philosophy</h2>
         <div className="grid gap-6 md:grid-cols-3">
           {leadershipPrinciples.map((principle) => (
             <div key={principle.title}>
-              <h3 className="mb-2 font-semibold text-foreground">{principle.title}</h3>
-
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-semibold">{principle.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {principle.description}
               </p>
             </div>

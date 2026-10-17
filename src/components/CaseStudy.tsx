@@ -3,7 +3,6 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SectionWrapper } from "./SectionWrapper";
 import { caseExhibits, extraProjects, codeNotes } from "../data/caseStudies";
 import code from "../data/projectCode.json";
-import { CostcoModel } from "./CostcoModel";
 import imageDimensions from "../data/imageDimensions.json";
 
 type Project = {
@@ -106,11 +105,7 @@ export function CaseStudy({ slug, project }: { slug: string; project?: Project }
           </section>
         ))}
       </div>
-      {slug === "costco-financial-modeling" && (
-        <div className="mt-10">
-          <CostcoModel />
-        </div>
-      )}
+
       {snippet && (
         <section className="mt-12">
           <h2 className="mb-3 text-2xl font-semibold">A look at the code</h2>
@@ -124,7 +119,9 @@ export function CaseStudy({ slug, project }: { slug: string; project?: Project }
           <div className="mt-5 rounded-xl bg-muted/50 p-5">
             <h3 className="mb-3 font-semibold">Findings and recommendations</h3>
             <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-              {codeNotes[slug]?.map(note => <li key={note}>{note}</li>)}
+              {codeNotes[slug]?.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
             </ul>
           </div>
         </section>
