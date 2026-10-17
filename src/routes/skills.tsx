@@ -6,13 +6,13 @@ export const Route = createFileRoute("/skills")({
   component: SkillsPage,
   head: () => ({
     meta: [
-      { title: "Skills & Certifications — Annie Nguyen" },
+      { title: "Skills & Certifications | Annie Nguyen" },
       {
         name: "description",
         content:
           "Technical and analytical skills, tools, and certifications held by Annie Nguyen for data analyst and business analyst roles.",
       },
-      { property: "og:title", content: "Skills & Certifications — Annie Nguyen" },
+      { property: "og:title", content: "Skills & Certifications | Annie Nguyen" },
       {
         property: "og:description",
         content:
@@ -27,10 +27,12 @@ export const Route = createFileRoute("/skills")({
 const skillGroups = [
   {
     title: "Programming & Databases",
-    skills: ["SQL", "Python", "R", "HTML"],
+    skills: ["SQL (window functions, CTEs, stored procedures)", "Python", "R", "HTML"],
+    application: "I use SQL to integrate and query data, and Python to analyze results and support reporting. At MSB Bank, this included bringing together more than 40 datasets for loan performance analysis.",
   },
   {
     title: "Analytics & Visualization",
+    application: "I build dashboards that connect performance metrics with business questions. My projects cover revenue planning, customer segmentation, store performance, and campaign response.",
     skills: [
       "Excel (VLOOKUP, PivotTables, Power Query)",
       "Tableau",
@@ -39,15 +41,19 @@ const skillGroups = [
   },
   {
     title: "Business & AI Tools",
+    application: "My work includes documenting requirements, communicating findings, and using AI tools to assist with coding, debugging, and research.",
     skills: [
       "Microsoft 365 (PowerPoint, Visio, Project)",
       "GitHub",
       "Copilot",
+      "Codex",
+      "Claude Code",
       "NotebookLM",
     ],
   },
   {
     title: "Coursework Highlights",
+    application: "My studies connect analytical methods with economics, finance, and business decisions. Leadership Studies adds a focus on communication and working with people.",
     skills: [
       "Database Management",
       "Data Analytics for Business",
@@ -60,21 +66,8 @@ const skillGroups = [
 ];
 
 const certifications = [
-  {
-    name: "Google Data Analytics Professional Certificate",
-    issuer: "Google / Coursera",
-    year: "In progress",
-  },
-  {
-    name: "Microsoft Power BI Data Analyst (PL-300)",
-    issuer: "Microsoft",
-    year: "In progress",
-  },
-  {
-    name: "SQL for Data Science",
-    issuer: "UC Davis / Coursera",
-    year: "2024",
-  },
+  { name: "Google Data Analytics Professional Certificate", issuer: "Google / Coursera", year: "2026" },
+  { name: "KPIM Data Program Certificate", issuer: "KPIM", year: "Expected December 2026" },
 ];
 
 function SkillsPage() {
@@ -98,6 +91,7 @@ function SkillsPage() {
               <h3 className="mb-3 text-sm font-semibold text-primary">
                 {group.title}
               </h3>
+              <p className="mb-3 text-sm leading-relaxed text-muted-foreground">{group.application}</p>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
