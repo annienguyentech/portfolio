@@ -222,7 +222,7 @@ function Index() {
           <div className="mb-10">
             <p className="eyebrow mb-4">How I work</p>
 
-            <h2 className="text-3xl font-bold text-foreground">What I bring to a team</h2>
+            <h2 className="text-3xl font-bold text-foreground">Where I add value</h2>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
               I like making complicated information easier to understand, whether I’m exploring data
