@@ -186,7 +186,7 @@ function Index() {
 
       <SectionWrapper>
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-2xl font-bold text-foreground">Experience at a glance</h2>
+          <h2 className="text-2xl font-bold text-foreground">Experience</h2>
           <Link to="/experience" className="text-link">View experience <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
