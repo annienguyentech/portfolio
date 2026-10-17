@@ -12,7 +12,7 @@ export function SectionWrapper({
   as = "section",
 }: SectionWrapperProps) {
   const classes = cn(
-    "mx-auto w-full max-w-5xl px-4 py-16 md:py-24",
+    "page-section mx-auto w-full max-w-5xl px-4 py-8 md:py-12",
     className
   );
 
