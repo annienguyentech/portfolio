@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CompanyLogo, companyBrandStyle } from "../components/CompanyLogo";
 import { SectionWrapper } from "../components/SectionWrapper";
 
 export const Route = createFileRoute("/experience")({
@@ -143,20 +144,25 @@ function ExperiencePage() {
         </p>
       </header>
 
-      <div className="space-y-12">
+      <div className="space-y-5">
         {experiences.map((experience) => (
           <article
             key={`${experience.company}-${experience.role}`}
-            className="border-b border-border pb-10 last:border-b-0"
+            className="company-experience p-5 md:p-6"
+            style={companyBrandStyle(experience.company)}
           >
+            <div className="mb-4 flex flex-wrap items-center gap-4">
+              <CompanyLogo company={experience.company} />
+              <p className="company-name min-w-0 flex-1 font-semibold">{experience.company}</p>
+            </div>
             <div className="mb-4 flex flex-col justify-between gap-3 md:flex-row md:items-start">
               <div>
                 <h2 className="text-xl font-semibold text-foreground">
                   {experience.role}
                 </h2>
 
-                <p className="mt-1 font-medium text-primary">
-                  {experience.company} | {experience.location}
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {experience.location}
                 </p>
               </div>
 
