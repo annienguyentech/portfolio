@@ -165,7 +165,7 @@ function LeadershipPage() {
             {example.title === "Head of Event Coordination" && (
               <a
                 className="text-link mt-4"
-                href="https://www.instagram.com/gu_vsa/"
+                href="https://www.instagram.com/gu_vsa/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
               >
