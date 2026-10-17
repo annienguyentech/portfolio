@@ -41,8 +41,7 @@ const leadershipExamples = [
   {
     icon: <Users className="h-5 w-5" />,
     title: "Peer Academic Coach",
-    organization:
-      "Center for Student Academic Success, Gonzaga University",
+    organization: "Center for Student Academic Success, Gonzaga University",
     period: "January 2024 to Present",
     highlights: [
       "Coached 60+ students through personalized sessions focused on time management, note-taking, exam preparation, and academic confidence.",
@@ -70,10 +69,14 @@ const leadershipExamples = [
     title: "Comprehensive Leadership Program",
     organization: "Gonzaga University",
     period: "Minor in Leadership Studies",
-    highlights: ["Studying leadership alongside Business Analytics, Finance, and Economics.", "Learning to reflect on my role in a team and support people with different perspectives.", "Connecting classroom learning with community and service."],
-    outcome: "I want to use my skills in ways that support both organizations and the people around them.",
+    highlights: [
+      "Studying leadership alongside Business Analytics, Finance, and Economics.",
+      "Learning to reflect on my role in a team and support people with different perspectives.",
+      "Connecting classroom learning with community and service.",
+    ],
+    outcome:
+      "I want to use my skills in ways that support both organizations and the people around them.",
   },
-
 ];
 
 const leadershipPrinciples = [
@@ -84,8 +87,7 @@ const leadershipPrinciples = [
   },
   {
     title: "Create Clarity",
-    description:
-      "Turn complex information into clear responsibilities, decisions, and next steps.",
+    description: "Turn complex information into clear responsibilities, decisions, and next steps.",
   },
   {
     title: "Focus on Outcomes",
@@ -98,12 +100,11 @@ function LeadershipPage() {
   return (
     <SectionWrapper>
       <header className="mb-12">
-        <h1 className="mb-3 text-3xl font-bold text-foreground">
-          Leadership and Community Impact
-        </h1>
+        <h1 className="mb-3 text-3xl font-bold text-foreground">Leadership and Community Impact</h1>
 
         <p className="max-w-3xl leading-relaxed text-muted-foreground">
-          My leadership experience centers on mentoring students, organizing cultural events, and learning how to serve my community through the Comprehensive Leadership Program.
+          My leadership experience centers on mentoring students, organizing cultural events, and
+          learning how to serve my community through the Comprehensive Leadership Program.
         </p>
       </header>
 
@@ -113,21 +114,33 @@ function LeadershipPage() {
             key={example.title}
             className="flex flex-col rounded-lg border border-border bg-card p-6"
           >
-            <img src={example.title === "Peer Academic Coach" ? "/portfolio/coach-annie.webp" : example.title === "Head of Event Coordination" ? "/portfolio/vsa-stage.webp" : "/portfolio/clp-community.webp"} alt={example.title === "Peer Academic Coach" ? "Annie’s academic coaching profile" : example.title === "Head of Event Coordination" ? "Vietnamese Student Association cultural performance" : "Comprehensive Leadership Program community"} className="mb-5 h-56 w-full rounded-xl object-contain bg-muted/30" loading="lazy" /><div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
+            <img
+              src={
+                example.title === "Peer Academic Coach"
+                  ? "/portfolio/coach-annie.webp"
+                  : example.title === "Head of Event Coordination"
+                    ? "/portfolio/vsa-stage.webp"
+                    : "/portfolio/clp-community.webp"
+              }
+              alt={
+                example.title === "Peer Academic Coach"
+                  ? "Annie’s academic coaching profile"
+                  : example.title === "Head of Event Coordination"
+                    ? "Vietnamese Student Association cultural performance"
+                    : "Comprehensive Leadership Program community"
+              }
+              className="mb-5 h-56 w-full rounded-xl object-contain bg-muted/30"
+              loading="lazy"
+            />
+            <div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
               {example.icon}
             </div>
 
-            <h2 className="text-lg font-semibold text-card-foreground">
-              {example.title}
-            </h2>
+            <h2 className="text-lg font-semibold text-card-foreground">{example.title}</h2>
 
-            <p className="mt-1 text-sm font-medium text-primary">
-              {example.organization}
-            </p>
+            <p className="mt-1 text-sm font-medium text-primary">{example.organization}</p>
 
-            <p className="mt-1 text-sm text-muted-foreground">
-              {example.period}
-            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{example.period}</p>
 
             <ul className="mt-5 list-disc space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground marker:text-primary">
               {example.highlights.map((highlight) => (
@@ -146,24 +159,62 @@ function LeadershipPage() {
         ))}
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-5"><a className="text-link" href="https://www.instagram.com/gu_vsa/" target="_blank" rel="noopener noreferrer">VSA on Instagram ↗</a><a className="text-link" href="https://www.gonzaga.edu/school-of-leadership-studies/academics/comprehensive-leadership-program" target="_blank" rel="noopener noreferrer">Explore the Comprehensive Leadership Program ↗</a></div><section className="mt-10"><h2 className="mb-5 text-2xl font-semibold">Community in pictures</h2><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{[["vsa-stage", "Cultural performances"], ["vsa-community", "Vietnamese Student Association community"], ["vsa-event", "Sharing culture on campus"], ["clp-friends", "Learning alongside friends"], ["learning-studio", "Learning Studio community"]].map(([image, caption]) => <figure key={image}><a href={`/portfolio/${image}.webp`} target="_blank" rel="noopener noreferrer"><img src={`/portfolio/${image}.webp`} alt={caption} className="h-56 w-full rounded-xl object-contain bg-muted/30" loading="lazy" /></a><figcaption className="mt-2 text-sm text-muted-foreground">{caption}</figcaption></figure>)}</div></section><section className="mt-16 rounded-lg border border-border bg-muted/30 p-6 md:p-8">
+      <div className="mt-6 flex flex-wrap gap-5">
+        <a
+          className="text-link"
+          href="https://www.instagram.com/gu_vsa/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          VSA on Instagram ↗
+        </a>
+        <a
+          className="text-link"
+          href="https://www.gonzaga.edu/school-of-leadership-studies/academics/comprehensive-leadership-program"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore the Comprehensive Leadership Program ↗
+        </a>
+      </div>
+      <section className="mt-10">
+        <h2 className="mb-5 text-2xl font-semibold">Community in pictures</h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["vsa-stage", "Cultural performances"],
+            ["vsa-community", "Vietnamese Student Association community"],
+            ["vsa-event", "Sharing culture on campus"],
+            ["clp-friends", "Learning alongside friends"],
+            ["clp-community", "Gonzaga community"],
+          ].map(([image, caption]) => (
+            <figure key={image}>
+              <a href={`/portfolio/${image}.webp`} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={`/portfolio/${image}.webp`}
+                  alt={caption}
+                  className="h-56 w-full rounded-xl object-contain bg-muted/30"
+                  loading="lazy"
+                />
+              </a>
+              <figcaption className="mt-2 text-sm text-muted-foreground">{caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+      <section className="mt-16 rounded-lg border border-border bg-muted/30 p-6 md:p-8">
         <div className="mb-8">
-          <h2 className="mb-3 text-xl font-semibold text-foreground">
-            Leadership Philosophy
-          </h2>
+          <h2 className="mb-3 text-xl font-semibold text-foreground">Leadership Philosophy</h2>
 
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            I approach leadership as the responsibility to create clarity,
-            support others, and move a team toward meaningful results.
+            I approach leadership as the responsibility to create clarity, support others, and move
+            a team toward meaningful results.
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {leadershipPrinciples.map((principle) => (
             <div key={principle.title}>
-              <h3 className="mb-2 font-semibold text-foreground">
-                {principle.title}
-              </h3>
+              <h3 className="mb-2 font-semibold text-foreground">{principle.title}</h3>
 
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {principle.description}

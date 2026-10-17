@@ -1,3 +1,4 @@
+import { extraProjects, caseExhibits } from "../data/caseStudies";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
 import { ArrowRight } from "lucide-react";
@@ -38,7 +39,23 @@ export const Route = createFileRoute("/projects")({
 });
 
 const projects = [
-  {slug: "customer-behavior-and-segmentation-analysis", title: "Customer Behavior and Segmentation Analysis", category: "Customer Analytics", description: "Exploring customer groups, revenue contribution, and purchasing patterns in an interactive dashboard.", tags: ["Customer Segmentation", "Dashboard Design"], outcome: "A visual overview of customer composition and purchasing behavior."},
+  ...Object.entries(extraProjects).map(([slug, p]) => ({
+    slug,
+    title: p.title,
+    category: p.category,
+    description: p.summary,
+    tags: p.tools,
+    outcome: p.results[0],
+  })),
+  {
+    slug: "customer-behavior-and-segmentation-analysis",
+    title: "Customer Behavior and Segmentation Analysis",
+    category: "Customer Analytics",
+    description:
+      "Exploring customer groups, revenue contribution, and purchasing patterns in an interactive dashboard.",
+    tags: ["Customer Segmentation", "Dashboard Design"],
+    outcome: "A visual overview of customer composition and purchasing behavior.",
+  },
   {
     slug: "xmas-gift-analysis",
     title: "Xmas Gift Analysis",
@@ -66,23 +83,7 @@ const projects = [
     description:
       "Built an interactive Excel dashboard to analyze revenue, gross profit, revenue targets, customer segments, product categories, and store performance using structured sales data.",
     tags: ["Excel", "Power Query", "PivotTables", "Dashboard Design"],
-    outcome:
-      "Analyzed 58,414 transactions across 29 stores, 353 products, and 18,484 customers.",
-  },
-  {
-    slug: "online-course-completion-analysis",
-    title: "Online Course Completion Analysis",
-    category: "Descriptive Analytics",
-    description:
-      "Analyzed online learning data to understand how course difficulty, module length, learner age, and education level relate to course-completion behavior.",
-    tags: [
-      "Descriptive Analytics",
-      "Data Visualization",
-      "Education Analytics",
-      "Business Insights",
-    ],
-    outcome:
-      "Identified learner and course characteristics associated with stronger completion outcomes.",
+    outcome: "Analyzed 58,414 transactions across 29 stores, 353 products, and 18,484 customers.",
   },
   {
     slug: "sales-optimization-analysis",
@@ -110,14 +111,12 @@ function ProjectsPage() {
   return (
     <SectionWrapper>
       <header className="mb-12">
-        <h1 className="mb-3 text-3xl font-bold text-foreground">
-          Analytics Projects
-        </h1>
+        <h1 className="mb-3 text-3xl font-bold text-foreground">Analytics Projects</h1>
 
         <p className="max-w-3xl leading-relaxed text-muted-foreground">
-          Explore projects demonstrating how I use data preparation, analysis,
-          visualization, database design, and machine learning to answer
-          business questions and communicate actionable insights.
+          Explore projects demonstrating how I use data preparation, analysis, visualization,
+          database design, and machine learning to answer business questions and communicate
+          actionable insights.
         </p>
       </header>
 
@@ -130,6 +129,14 @@ function ProjectsPage() {
             className="group block h-full"
           >
             <article className="flex h-full flex-col rounded-lg border border-border bg-card p-6 transition-all duration-200 hover:-translate-y-1 hover:border-primary/50 hover:shadow-md">
+              {caseExhibits[project.slug]?.[0] && (
+                <img
+                  src={caseExhibits[project.slug][0].image}
+                  alt={`${project.title} work preview`}
+                  className="mb-5 aspect-[3/2] w-full rounded-lg border border-border bg-muted/30 object-contain"
+                  loading="lazy"
+                />
+              )}
               <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">
                 {project.category}
               </p>

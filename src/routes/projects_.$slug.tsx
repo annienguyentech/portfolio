@@ -1,22 +1,5 @@
-import { projectReadmes } from "../data/projectReadmes";
-import { ReadmeContent } from "../components/ReadmeContent";
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { SectionWrapper } from "../components/SectionWrapper";
-import { projectGallery } from "../data/projectGallery";
-import {
-  ArrowLeft,
-  BarChart3,
-  BookOpen,
-  CheckCircle2,
-  Database,
-  Github,
-  FileText,
-  Image as ImageIcon,
-
-  Lightbulb,
-  Target,
-  Wrench,
-} from "lucide-react";
+import { CaseStudy } from "../components/CaseStudy";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projects_/$slug")({
   component: ProjectDetailsPage,
@@ -59,11 +42,16 @@ const projectDetails: Record<string, ProjectDetails> = {
   "customer-behavior-and-segmentation-analysis": {
     title: "Customer Behavior and Segmentation Analysis",
     category: "Power BI and Customer Analytics",
-    summary: "An interactive Power BI dashboard exploring purchasing behavior through Recency, Frequency, and Monetary value.",
+    summary:
+      "An interactive Power BI dashboard exploring purchasing behavior through Recency, Frequency, and Monetary value.",
     challenge: "Organize customer behavior into meaningful segments to support business decisions.",
     objectives: ["Compare customer behavior across RFM segments."],
-    process: ["Analyzed customer purchasing behavior and presented segment comparisons in Power BI."],
-    results: ["Created a dashboard for exploring customer segments and their contribution to performance."],
+    process: [
+      "Analyzed customer purchasing behavior and presented segment comparisons in Power BI.",
+    ],
+    results: [
+      "Created a dashboard for exploring customer segments and their contribution to performance.",
+    ],
     tools: ["Power BI", "DAX", "Power Query", "RFM Analysis"],
   },
   "xmas-gift-analysis": {
@@ -247,14 +235,7 @@ const projectDetails: Record<string, ProjectDetails> = {
       "Highlighted underfilled routes that could benefit from targeted promotions.",
       "Proposed coupon strategies associated with a potential 15% improvement in profitability.",
     ],
-    tools: [
-      "SQL",
-      "SQL Server",
-      "Database Design",
-      "ERD",
-      "Data Cleaning",
-      "Business Analysis",
-    ],
+    tools: ["SQL", "SQL Server", "Database Design", "ERD", "Data Cleaning", "Business Analysis"],
   },
 
   "marketing-campaign-response-prediction": {
@@ -300,271 +281,7 @@ const projectDetails: Record<string, ProjectDetails> = {
   },
 };
 
-const projectRepositories: Record<string, string> = {
-  "xmas-gift-analysis":
-    "https://github.com/annienguyentech/xmas-gift-analysis",
-  "revenue-plan-progress-analysis":
-    "https://github.com/annienguyentech/revenue-plan-progress-analysis",
-  "kpim-mart-sales-excel-dashboard":
-    "https://github.com/annienguyentech/kpim-mart-sales-excel-dashboard",
-  "sales-optimization-analysis":
-    "https://github.com/annienguyentech/sales-optimization-analysis",
-  "marketing-campaign-response-prediction":
-    "https://github.com/annienguyentech/marketing-campaign-response-prediction",
-  "customer-behavior-and-segmentation-analysis":
-    "https://github.com/annienguyentech/customer-behavior-and-segmentation-analysis",
-  "outstanding-loans-and-bank-capital-analysis":
-    "https://github.com/annienguyentech/outstanding-loans-and-bank-capital-analysis",
-};
-
 function ProjectDetailsPage() {
   const { slug } = Route.useParams();
-  const project = projectDetails[slug];
-  const readme = projectReadmes[slug];
-  const repositoryUrl = projectRepositories[slug];
-  const gallery = projectGallery[slug];
-  const preview = ({ "xmas-gift-analysis": "xmas", "revenue-plan-progress-analysis": "revenue", "customer-behavior-and-segmentation-analysis": "customers", "kpim-mart-sales-excel-dashboard": "excel" } as Record<string, string>)[slug];
-
-
-  if (!project) {
-    return (
-      <SectionWrapper>
-        <div className="py-20 text-center">
-          <h1 className="text-3xl font-bold text-foreground">
-            Project Not Found
-          </h1>
-
-          <p className="mt-3 text-muted-foreground">
-            The requested project page is not available.
-          </p>
-
-          <Link
-            to="/projects"
-            className="mt-6 inline-flex items-center gap-2 font-medium text-primary hover:underline"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Return to projects
-          </Link>
-        </div>
-      </SectionWrapper>
-    );
-  }
-
-  return (
-    <SectionWrapper>
-      <Link
-        to="/projects"
-        className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to all projects
-      </Link>
-
-      <header className="mb-12 border-b border-border pb-10">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
-          {project.category}
-        </p>
-
-        <h1 className="max-w-4xl text-3xl font-bold text-foreground md:text-4xl">
-          {project.title}
-        </h1>
-
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          {project.summary}
-        </p>
-      </header>
-
-      <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
-        <main className="space-y-12">
-          {preview && <a href={`/portfolio/${preview}.webp`} target="_blank" rel="noopener noreferrer"><img src={`/portfolio/${preview}.webp`} alt={`${project.title} preview`} className="w-full rounded-xl border border-border bg-white object-contain" /></a>}
-          {readme ? (
-            <ProjectSection
-              icon={<FileText className="h-5 w-5" />}
-              title="Full Project Documentation"
-            >
-              <ReadmeContent markdown={readme} repo={slug} />
-            </ProjectSection>
-          ) : (
-            <>
-              <ProjectSection
-                icon={<Target className="h-5 w-5" />}
-                title="Business Challenge"
-              >
-                <p className="leading-relaxed text-muted-foreground">
-                  {project.challenge}
-                </p>
-              </ProjectSection>
-
-              <ProjectSection
-                icon={<Lightbulb className="h-5 w-5" />}
-                title="Project Objectives"
-              >
-                <BulletList items={project.objectives} />
-              </ProjectSection>
-
-              <ProjectSection
-                icon={<Database className="h-5 w-5" />}
-                title="Analysis Process"
-              >
-                <ol className="space-y-4">
-                  {project.process.map((step, index) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                        {index + 1}
-                      </span>
-
-                      <p className="pt-0.5 leading-relaxed text-muted-foreground">
-                        {step}
-                      </p>
-                    </li>
-                  ))}
-                </ol>
-              </ProjectSection>
-
-              <ProjectSection
-                icon={<BarChart3 className="h-5 w-5" />}
-                title="Results and Insights"
-              >
-                <BulletList items={project.results} />
-              </ProjectSection>
-
-              {gallery && gallery.length > 0 && (
-                <ProjectSection
-                  icon={<ImageIcon className="h-5 w-5" />}
-                  title="Queries and Result Screenshots"
-                >
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    {gallery.map((item) => (
-                      <figure
-                        key={item.src}
-                        className="overflow-hidden rounded-lg border border-border bg-card"
-                      >
-                        <a href={item.src} target="_blank" rel="noreferrer">
-                          <img
-                            src={item.src}
-                            alt={`${project.title} — ${item.caption}`}
-                            loading="lazy"
-                            className="w-full bg-background object-contain transition-opacity hover:opacity-90"
-                          />
-                        </a>
-
-                        <figcaption className="border-t border-border px-4 py-3 text-sm text-muted-foreground">
-                          {item.caption}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
-                </ProjectSection>
-              )}
-            </>
-          )}
-
-
-
-          {repositoryUrl && (
-            <section className="border-t border-border pt-10 text-center">
-              <p className="text-sm text-muted-foreground">
-                Explore the complete source code and original project documentation.
-              </p>
-
-              <div className="mt-4 flex flex-wrap justify-center gap-3">
-                <a
-                  href={repositoryUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-primary inline-flex"
-                >
-                  <Github className="h-4 w-4" />
-                  View on GitHub
-                </a>
-
-                <a
-                  href={`${repositoryUrl}/blob/main/README.md`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-secondary inline-flex"
-                >
-                  <BookOpen className="h-4 w-4" />
-                  View README
-                </a>
-              </div>
-            </section>
-          )}
-        </main>
-
-        <aside>
-          <div className="sticky top-24 rounded-lg border border-border bg-card p-6">
-            <div className="mb-4 flex items-center gap-2">
-              <Wrench className="h-5 w-5 text-primary" />
-
-              <h2 className="font-semibold text-card-foreground">
-                Tools and Skills
-              </h2>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {project.tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="rounded-full bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-
-{repositoryUrl && (
-              <a
-                href={repositoryUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80 hover:underline"
-              >
-                <Github className="h-4 w-4" />
-                View source on GitHub
-              </a>
-            )}
-          </div>
-        </aside>
-      </div>
-    </SectionWrapper>
-  );
-}
-
-function ProjectSection({
-  icon,
-  title,
-  children,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section>
-      <div className="mb-5 flex items-center gap-3">
-        <div className="rounded-md bg-primary/10 p-2 text-primary">
-          {icon}
-        </div>
-
-        <h2 className="text-xl font-semibold text-foreground">{title}</h2>
-      </div>
-
-      {children}
-    </section>
-  );
-}
-
-function BulletList({ items }: { items: string[] }) {
-  return (
-    <ul className="space-y-3">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3">
-          <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-primary" />
-
-          <span className="leading-relaxed text-muted-foreground">{item}</span>
-        </li>
-      ))}
-    </ul>
-  );
+  return <CaseStudy slug={slug} project={projectDetails[slug]} />;
 }

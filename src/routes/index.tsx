@@ -3,14 +3,7 @@ import type { ReactNode } from "react";
 import { CompanyLogo, companyBrandStyle } from "../components/CompanyLogo";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
-import {
-  ArrowRight,
-  BriefcaseBusiness,
-  Database,
-  LineChart,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Database, LineChart, Mail, MapPin } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -47,14 +40,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const skills = [
-  "SQL",
-  "Python",
-  "Power BI",
-  "Excel",
-  "Tableau",
-  "Machine Learning",
-];
+const skills = ["SQL", "Python", "Power BI", "Excel", "Tableau", "Machine Learning"];
 
 const strengths = [
   {
@@ -79,55 +65,44 @@ const strengths = [
 
 const featuredProjects = [
   {
-    "slug": "xmas-gift-analysis",
-    "category": "SQL",
-    "title": "Xmas Gift Analysis",
-    "previewImage": "/portfolio/xmas.webp",
-    "previewAlt": "SQL queries exploring Christmas sales patterns",
-    "description": "Exploring seasonal sales, customer behavior, and shopping patterns through SQL.",
-    "tags": [
-      "SQL Server",
-      "Business Analysis"
-    ]
+    slug: "xmas-gift-analysis",
+    category: "SQL",
+    title: "Xmas Gift Analysis",
+    previewImage: "/portfolio/xmas.webp",
+    previewAlt: "SQL queries exploring Christmas sales patterns",
+    description: "Exploring seasonal sales, customer behavior, and shopping patterns through SQL.",
+    tags: ["SQL Server", "Business Analysis"],
   },
   {
-    "slug": "revenue-plan-progress-analysis",
-    "category": "Power BI",
-    "title": "Revenue Plan Progress Analysis",
-    "previewImage": "/portfolio/revenue.webp",
-    "previewAlt": "Revenue plan dashboard with actual revenue and performance by store",
-    "description": "An interactive view of revenue performance, targets, and the drivers behind the results.",
-    "tags": [
-      "Power BI",
-      "DAX",
-      "Power Query"
-    ]
+    slug: "revenue-plan-progress-analysis",
+    category: "Power BI",
+    title: "Revenue Plan Progress Analysis",
+    previewImage: "/portfolio/revenue.webp",
+    previewAlt: "Revenue plan dashboard with actual revenue and performance by store",
+    description:
+      "An interactive view of revenue performance, targets, and the drivers behind the results.",
+    tags: ["Power BI", "DAX", "Power Query"],
   },
   {
-    "slug": "customer-behavior-and-segmentation-analysis",
-    "category": "Customer Analytics",
-    "title": "Customer Behavior and Segmentation Analysis",
-    "previewImage": "/portfolio/customers.webp",
-    "previewAlt": "Customer analysis dashboard with customer groups and purchasing patterns",
-    "description": "A dashboard exploring customer groups and purchasing behavior to support more focused business decisions.",
-    "tags": [
-      "Customer Segmentation",
-      "Dashboard Design"
-    ]
+    slug: "customer-behavior-and-segmentation-analysis",
+    category: "Customer Analytics",
+    title: "Customer Behavior and Segmentation Analysis",
+    previewImage: "/portfolio/customers.webp",
+    previewAlt: "Customer analysis dashboard with customer groups and purchasing patterns",
+    description:
+      "A dashboard exploring customer groups and purchasing behavior to support more focused business decisions.",
+    tags: ["Customer Segmentation", "Dashboard Design"],
   },
   {
-    "slug": "kpim-mart-sales-excel-dashboard",
-    "category": "Excel",
-    "title": "KPIM Mart Sales Excel Dashboard",
-    "previewImage": "/portfolio/excel.webp",
-    "previewAlt": "Excel sales dashboard with revenue trends and product performance",
-    "description": "Sales, profit, and store performance brought together in an interactive Excel dashboard.",
-    "tags": [
-      "Excel",
-      "Power Query",
-      "PivotTables"
-    ]
-  }
+    slug: "kpim-mart-sales-excel-dashboard",
+    category: "Excel",
+    title: "KPIM Mart Sales Excel Dashboard",
+    previewImage: "/portfolio/excel.webp",
+    previewAlt: "Excel sales dashboard with revenue trends and product performance",
+    description:
+      "Sales, profit, and store performance brought together in an interactive Excel dashboard.",
+    tags: ["Excel", "Power Query", "PivotTables"],
+  },
 ];
 
 function Index() {
@@ -137,30 +112,24 @@ function Index() {
         <SectionWrapper className="py-8 md:py-12">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="max-w-3xl">
-              <p className="eyebrow mb-5">
-                Data Analyst and Business Analyst
-              </p>
+              <p className="eyebrow mb-5">Data Analyst and Business Analyst</p>
 
-              <h1 className="home-greeting text-foreground">
-                Annie Nguyen
-              </h1>
+              <h1 className="home-greeting text-foreground">Annie Nguyen</h1>
 
               <p className="mt-6 max-w-2xl text-xl font-medium leading-relaxed text-foreground md:text-2xl">
                 A Gonzaga student exploring the connections between data, business, and people.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                I study Business Analytics, Finance, and Economics at Gonzaga
-                University, with a minor in Leadership Studies.
-                I’m interested in the stories behind the numbers and how they
-                help people make better decisions.
+                I study Business Analytics, Finance, and Economics at Gonzaga University, with a
+                minor in Leadership Studies. I’m interested in the stories behind the numbers and
+                how they help people make better decisions.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Through projects and internships in business consulting, business
-                analytics, and financial analysis, I’m learning to connect technical work with
-                real business questions. On this website, you’ll find what I’ve
-                been working on, what I’m
+                Through projects and internships in business consulting, business analytics, and
+                financial analysis, I’m learning to connect technical work with real business
+                questions. On this website, you’ll find what I’ve been working on, what I’m
                 learning, and a little about the person behind the projects.
               </p>
 
@@ -193,11 +162,11 @@ function Index() {
               </div>
             </div>
 
-            <figure className="portrait-frame portrait-circle mx-auto w-full max-w-sm">
+            <figure className="portrait-frame portrait-full mx-auto w-full max-w-sm">
               <img
                 src="/portfolio/annie-portrait.png"
                 alt="Portrait of Annie Nguyen"
-                className="aspect-square w-full rounded-full object-cover object-[50%_72%] scale-[1.85]"
+                className="h-auto w-full rounded-2xl object-contain"
               />
             </figure>
           </div>
@@ -207,19 +176,42 @@ function Index() {
       <SectionWrapper>
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
           <h2 className="text-2xl font-bold text-foreground">Experience</h2>
-          <Link to="/experience" className="text-link">View experience <ArrowRight className="h-4 w-4" /></Link>
+          <Link to="/experience" className="text-link">
+            View experience <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { company: "Credential Network", role: "Business Consultant Intern", detail: "Built a KPI dashboard with Power BI and Python, and a SQL Server lead scoring system using data from more than 1,000 clients." },
-            { company: "Stanza", role: "Business Analyst Intern", detail: "Conducted more than 100 client interviews for an AI drafting feature and built reporting for marketing spending and lead generation." },
-            { company: "MSB Bank", role: "Financial Analyst Intern", detail: "Integrated more than 40 datasets with SQL and built Excel reporting for loan utilization across more than 100,000 credit users." },
+            {
+              company: "Credential Network",
+              role: "Business Consultant Intern",
+              detail:
+                "Built a KPI dashboard with Power BI and Python, and a SQL Server lead scoring system using data from more than 1,000 clients.",
+            },
+            {
+              company: "Stanza",
+              role: "Business Analyst Intern",
+              detail:
+                "Conducted more than 100 client interviews for an AI drafting feature and built reporting for marketing spending and lead generation.",
+            },
+            {
+              company: "MSB Bank",
+              role: "Financial Analyst Intern",
+              detail:
+                "Integrated more than 40 datasets with SQL and built Excel reporting for loan utilization across more than 100,000 credit users.",
+            },
           ].map((experience) => (
-            <article key={experience.company} className="company-experience p-5" style={companyBrandStyle(experience.company)}>
+            <article
+              key={experience.company}
+              className="company-experience p-5"
+              style={companyBrandStyle(experience.company)}
+            >
               <CompanyLogo company={experience.company} />
               <h3 className="company-name mt-4 font-semibold">{experience.company}</h3>
               <p className="mt-1 text-sm font-medium text-foreground">{experience.role}</p>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{experience.detail}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {experience.detail}
+              </p>
             </article>
           ))}
         </div>
@@ -230,20 +222,21 @@ function Index() {
           <div className="mb-10">
             <p className="eyebrow mb-4">How I work</p>
 
-            <h2 className="text-3xl font-bold text-foreground">
-              What I bring to a team
-            </h2>
+            <h2 className="text-3xl font-bold text-foreground">What I bring to a team</h2>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              I like making complicated information easier to understand,
-              whether I’m exploring data or talking through a business question.
+              I like making complicated information easier to understand, whether I’m exploring data
+              or talking through a business question.
             </p>
           </div>
 
-          <Workflow /><div className="mb-10 flex flex-wrap items-center gap-2" aria-label="Tools I work with">
+          <Workflow />
+          <div className="mb-10 flex flex-wrap items-center gap-2" aria-label="Tools I work with">
             <span className="mr-2 text-sm text-muted-foreground">Tools I work with</span>
             {skills.map((skill) => (
-              <span key={skill} className="tag">{skill}</span>
+              <span key={skill} className="tag">
+                {skill}
+              </span>
             ))}
           </div>
 
@@ -265,20 +258,15 @@ function Index() {
           <div>
             <p className="eyebrow mb-4">Selected Work</p>
 
-            <h2 className="text-3xl font-bold text-foreground">
-              A few things I’ve worked on
-            </h2>
+            <h2 className="text-3xl font-bold text-foreground">A few things I’ve worked on</h2>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Projects covering business intelligence, database analysis, data
-              visualization, and machine learning.
+              Projects covering business intelligence, database analysis, data visualization, and
+              machine learning.
             </p>
           </div>
 
-          <Link
-            to="/projects"
-            className="text-link hidden shrink-0 md:inline-flex"
-          >
+          <Link to="/projects" className="text-link hidden shrink-0 md:inline-flex">
             View all projects
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -346,12 +334,12 @@ function Index() {
         <SectionWrapper className="py-14">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
-              <h2 className="text-2xl font-bold text-foreground">
-                Opportunities in analytics
-              </h2>
+              <h2 className="text-2xl font-bold text-foreground">Opportunities in analytics</h2>
 
               <p className="mt-2 max-w-2xl text-muted-foreground">
-                I am looking for opportunities in data analytics, business analytics, and financial analytics. Thank you for considering my work. Please contact me at annienguyengu@gmail.com.
+                I am looking for opportunities in data analytics, business analytics, and financial
+                analytics. Thank you for considering my work. Please contact me at
+                annienguyengu@gmail.com.
               </p>
             </div>
 
@@ -381,13 +369,9 @@ function StrengthCard({
         {icon}
       </div>
 
-      <h3 className="text-lg font-semibold text-card-foreground">
-        {title}
-      </h3>
+      <h3 className="text-lg font-semibold text-card-foreground">{title}</h3>
 
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {description}
-      </p>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
     </article>
   );
 }

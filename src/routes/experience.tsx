@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CompanyLogo, companyBrandStyle } from "../components/CompanyLogo";
-import { ExperienceStory } from "../components/ExperienceStory";
+import { ExperienceHero, ExperienceMedia } from "../components/ExperienceMedia";
 import { SectionWrapper } from "../components/SectionWrapper";
 
 export const Route = createFileRoute("/experience")({
@@ -52,7 +52,9 @@ const experiences: Experience[] = [
     location: "Gonzaga University",
     role: "Smartsheet Automation Project for Essenza",
     period: "October 2026 to Present",
-    achievements: ["Working with Essenza to design, test, and implement automation workflows in Smartsheet through Zag Business + Tech."],
+    achievements: [
+      "Working with Essenza to design, test, and implement automation workflows in Smartsheet through Zag Business + Tech.",
+    ],
   },
   {
     company: "Gonzaga University, Center for Community Engagement",
@@ -106,22 +108,18 @@ const experiences: Experience[] = [
       "Analyzed credit trends among Vietnamese SMEs valued from $1 million to $20 million by monitoring overdue and bad-debt expenses, identifying lending gaps, and assessing policy changes, supporting a partnership with the OPEC Fund to expand financing for 500,000 SMEs in Vietnam.",
     ],
   },
-
 ];
 
 function ExperiencePage() {
   return (
     <SectionWrapper>
       <header className="mb-12">
-        <h1 className="mb-3 text-3xl font-bold text-foreground">
-          Experience
-        </h1>
+        <h1 className="mb-3 text-3xl font-bold text-foreground">Experience</h1>
 
         <p className="max-w-3xl leading-relaxed text-muted-foreground">
-          Explore my professional experience applying data analytics, business
-          intelligence, financial analysis, and consulting skills to solve
-          business problems, improve reporting processes, and support
-          data-driven decisions.
+          Explore my professional experience applying data analytics, business intelligence,
+          financial analysis, and consulting skills to solve business problems, improve reporting
+          processes, and support data-driven decisions.
         </p>
       </header>
 
@@ -132,19 +130,23 @@ function ExperiencePage() {
             className="company-experience p-5 md:p-6"
             style={companyBrandStyle(experience.company)}
           >
-            {experience.company.startsWith("Gonzaga University") && <img src={experience.company.includes("Community Engagement") ? "/portfolio/cce-community.webp" : "/portfolio/learning-studio.webp"} alt={experience.company.includes("Community Engagement") ? "Gonzaga community engagement in action" : "Gonzaga Learning Studio community"} className="mb-5 max-h-64 w-full rounded-xl object-cover" loading="lazy" />}<div className="mb-4 flex flex-wrap items-center gap-4">
-              {!experience.company.startsWith("Gonzaga University") && <CompanyLogo company={experience.company} />}
+            <ExperienceHero company={experience.company} />
+            <div className="mb-4 flex flex-wrap items-center gap-4">
+              <CompanyLogo
+                company={
+                  experience.company.startsWith("Gonzaga University") ||
+                  experience.company === "Zag Business + Tech"
+                    ? "Gonzaga"
+                    : experience.company
+                }
+              />
               <p className="company-name min-w-0 flex-1 font-semibold">{experience.company}</p>
             </div>
             <div className="mb-4 flex flex-col justify-between gap-3 md:flex-row md:items-start">
               <div>
-                <h2 className="text-xl font-semibold text-foreground">
-                  {experience.role}
-                </h2>
+                <h2 className="text-xl font-semibold text-foreground">{experience.role}</h2>
 
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {experience.location}
-                </p>
+                <p className="mt-1 text-sm text-muted-foreground">{experience.location}</p>
               </div>
 
               <p className="shrink-0 text-sm font-medium text-muted-foreground">
@@ -154,15 +156,12 @@ function ExperiencePage() {
 
             <ul className="list-disc space-y-2 pl-5 text-muted-foreground marker:text-primary">
               {experience.achievements.map((achievement) => (
-                <li
-                  key={achievement}
-                  className="pl-1 leading-relaxed"
-                >
+                <li key={achievement} className="pl-1 leading-relaxed">
                   {achievement}
                 </li>
               ))}
             </ul>
-            <ExperienceStory company={experience.company} />
+            <ExperienceMedia company={experience.company} />
           </article>
         ))}
       </div>
