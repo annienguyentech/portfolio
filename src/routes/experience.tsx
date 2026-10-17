@@ -68,7 +68,7 @@ const experiences: Experience[] = [
     company: "Gonzaga University, Center for Student Academic Success",
     location: "Spokane, WA",
     role: "Peer Academic Coach",
-    period: "January 2024 - Present",
+    period: "January 2024 to Present",
     achievements: [
       "Coached 60+ students through one-on-one sessions, providing tailored strategies for time management, note-taking, and exam preparation to improve academic performance and confidence.",
       "Designed and led 8+ academic skills workshops attended by 100+ students, covering procrastination management and active study methods while receiving 95% positive feedback.",
@@ -79,7 +79,7 @@ const experiences: Experience[] = [
     company: "Credential Network",
     location: "Spokane, WA",
     role: "Business Consultant",
-    period: "September 2025 - December 2025",
+    period: "September 2025 to December 2025",
     achievements: [
       "Collaborated with the finance team to identify key performance indicators and develop an interactive KPI dashboard using Power BI and Python, reducing manual reporting time by more than 50%.",
       "Built a lead scoring system using data from 1,000+ clients stored in SQL Server, improving the accuracy of conversion rate and customer acquisition cost calculations by 20%.",
@@ -89,7 +89,7 @@ const experiences: Experience[] = [
     company: "Stanza",
     location: "Menlo Park, CA",
     role: "Business Analyst Intern",
-    period: "June 2025 - August 2025",
+    period: "June 2025 to August 2025",
     achievements: [
       "Led the end-to-end development of a new AI drafting feature by interviewing 100+ potential clients and collaborating with the software engineering team, producing requirements documentation that reduced development rework by 30%.",
       "Designed a reporting dashboard by interpreting and visualizing 30+ Excel datasets using Power BI and Python to monitor monthly marketing spending and lead generation rates, supporting social media campaign investment decisions.",
@@ -100,7 +100,7 @@ const experiences: Experience[] = [
     company: "MSB Bank",
     location: "Hanoi, Vietnam",
     role: "Financial Analyst Intern",
-    period: "May 2024 - August 2024",
+    period: "May 2024 to August 2024",
     achievements: [
       "Optimized business loan performance reporting by designing SQL queries to integrate 40+ datasets and building Excel dashboards that tracked loan utilization, reducing manual reporting effort by 30% across 100,000+ credit users.",
       "Analyzed credit trends among Vietnamese SMEs valued from $1 million to $20 million by monitoring overdue and bad-debt expenses, identifying lending gaps, and assessing policy changes, supporting a partnership with the OPEC Fund to expand financing for 500,000 SMEs in Vietnam.",

@@ -27,7 +27,7 @@ export const Route = createFileRoute("/about")({
 const education = {
   school: "Gonzaga University",
   location: "Spokane, WA",
-  period: "August 2023 - May 2028",
+  period: "August 2023 to May 2028",
   degrees: [
     {
       title: "Bachelor of Business Administration in Business Analytics & Finance",

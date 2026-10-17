@@ -43,7 +43,7 @@ const leadershipExamples = [
     title: "Peer Academic Coach",
     organization:
       "Center for Student Academic Success, Gonzaga University",
-    period: "January 2024 - Present",
+    period: "January 2024 to Present",
     highlights: [
       "Coached 60+ students through personalized sessions focused on time management, note-taking, exam preparation, and academic confidence.",
       "Designed and led 8+ academic skills workshops attended by more than 100 students.",
@@ -56,7 +56,7 @@ const leadershipExamples = [
     icon: <Lightbulb className="h-5 w-5" />,
     title: "Head of Event Coordination",
     organization: "Vietnamese Student Association",
-    period: "August 2024 - May 2025",
+    period: "August 2024 to May 2025",
     highlights: [
       "Coordinated 3+ cultural events from initial planning through final delivery.",
       "Managed event logistics, scheduling, team responsibilities, and communication with campus partners.",
@@ -113,7 +113,7 @@ function LeadershipPage() {
             key={example.title}
             className="flex flex-col rounded-lg border border-border bg-card p-6"
           >
-            <img src={example.title === "Peer Academic Coach" ? "/portfolio/coach-annie.webp" : example.title === "Head of Event Coordination" ? "/portfolio/vsa-annie.webp" : "/portfolio/clp-community.webp"} alt={example.title === "Peer Academic Coach" ? "Annie’s academic coaching profile" : example.title === "Head of Event Coordination" ? "Annie’s Vietnamese Student Association event leadership profile" : "Comprehensive Leadership Program community"} className="mb-5 h-56 w-full rounded-xl object-contain bg-muted/30" loading="lazy" /><div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
+            <img src={example.title === "Peer Academic Coach" ? "/portfolio/coach-annie.webp" : example.title === "Head of Event Coordination" ? "/portfolio/vsa-stage.webp" : "/portfolio/clp-community.webp"} alt={example.title === "Peer Academic Coach" ? "Annie’s academic coaching profile" : example.title === "Head of Event Coordination" ? "Vietnamese Student Association cultural performance" : "Comprehensive Leadership Program community"} className="mb-5 h-56 w-full rounded-xl object-contain bg-muted/30" loading="lazy" /><div className="mb-4 inline-flex w-fit rounded-md bg-primary/10 p-2 text-primary">
               {example.icon}
             </div>
 
