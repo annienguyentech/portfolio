@@ -3,7 +3,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionWrapper } from "../components/SectionWrapper";
 import {
   ArrowRight,
-  BarChart3,
   BriefcaseBusiness,
   Database,
   LineChart,
@@ -111,45 +110,30 @@ const featuredProjects = [
   },
 ];
 
-const highlights = [
-  {
-    value: "40+",
-    label: "Datasets integrated",
-  },
-  {
-    value: "100K+",
-    label: "Credit users analyzed",
-  },
-  {
-    value: "50%+",
-    label: "Reporting time reduced",
-  },
-];
-
 function Index() {
   return (
     <>
-      <section className="border-b border-border bg-background">
-        <SectionWrapper className="py-16 md:py-24">
+      <section className="home-intro bg-background">
+        <SectionWrapper className="py-12 md:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="max-w-3xl">
               <p className="eyebrow mb-5">
-                Data Analyst and Business Analyst
+                Data, business, and a little curiosity
               </p>
 
-              <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-6xl">
+              <h1 className="home-greeting text-foreground">
                 Hi, I’m Annie.
               </h1>
 
               <p className="mt-6 max-w-2xl text-xl font-medium leading-relaxed text-foreground md:text-2xl">
-                A Gonzaga student exploring the stories behind the numbers.
+                Curious about the numbers. Even more curious about the people.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 I study Business Analytics, Finance, and Economics at Gonzaga
                 University, with a minor in Leadership Studies. Based in Spokane,
-                I’m interested in the stories behind the numbers—and how those
-                stories help people make better decisions.
+                I’m interested in the stories behind the numbers and how they
+                help people make better decisions.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -171,14 +155,6 @@ function Index() {
                 </span>
               </div>
 
-              <div className="mt-7 flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span key={skill} className="tag">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/projects" className="btn-primary">
                   Explore my projects
@@ -191,41 +167,24 @@ function Index() {
 
                 <Link to="/contact" className="btn-secondary">
                   <Mail className="h-4 w-4" />
-                  Contact Me
+                  Say hello
                 </Link>
               </div>
             </div>
 
-            <div className="mx-auto w-full max-w-sm">
+            <figure className="portrait-frame mx-auto w-full max-w-sm">
               <img
                 src="/annie-profile.jpg"
                 alt="Portrait of Annie Nguyen"
                 className="aspect-square w-full rounded-2xl object-cover object-bottom"
               />
-            </div>
+              <figcaption>A little glimpse of the person behind the projects.</figcaption>
+            </figure>
           </div>
         </SectionWrapper>
       </section>
 
-      <section className="border-b border-border bg-muted/40">
-        <SectionWrapper className="py-8">
-          <div className="grid gap-5 sm:grid-cols-3">
-            {highlights.map((highlight) => (
-              <div key={highlight.label}>
-                <p className="text-2xl font-bold text-foreground">
-                  {highlight.value}
-                </p>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {highlight.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </SectionWrapper>
-      </section>
-
-      <section id="about-me" aria-labelledby="about-me-heading" className="scroll-mt-24">
+      <section id="about-me" aria-labelledby="about-me-heading" className="personal-section scroll-mt-24">
         <SectionWrapper>
           <div className="mb-8 max-w-2xl">
             <p className="eyebrow mb-4">A little more about me</p>
@@ -233,11 +192,11 @@ function Index() {
               Beyond the spreadsheets
             </h2>
             <p className="mt-3 text-muted-foreground">
-              A few things you won’t find on my résumé.
+              A few things you won’t find on my resume.
             </p>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 sm:grid-cols-2">
             {[
               {
                 label: "Off the clock",
@@ -255,17 +214,17 @@ function Index() {
                 label: "Once you know me",
                 title: "A gentle first impression",
                 description:
-                  "I may come across as soft-spoken, but I’m direct and have strong opinions. Get to know me and you’ll hear them.",
+                  "I may seem quiet at first, but I’m direct and have a point of view. I enjoy conversations where we can share different perspectives.",
               },
               {
                 label: "A fun fact",
                 title: "10 cities. About a month.",
                 description:
-                  "I once visited ten different cities in about a month. It’s one of the more unexpected facts about me.",
+                  "I once visited ten different cities in about a month. Ask me about that trip when we meet.",
               },
             ].map((detail) => (
-              <article key={detail.title} className="content-card h-full p-6">
-                <p className="text-xs font-bold uppercase tracking-wider text-primary">
+              <article key={detail.title} className="personal-note h-full p-6 md:p-8">
+                <p className="text-sm font-medium text-primary">
                   {detail.label}
                 </p>
                 <h3 className="mt-3 text-lg font-semibold text-card-foreground">
@@ -280,19 +239,26 @@ function Index() {
         </SectionWrapper>
       </section>
 
-      <section className="border-y border-border bg-muted/40">
+      <section className="skills-section border-y border-border bg-muted/40">
         <SectionWrapper>
           <div className="mb-10">
-            <p className="eyebrow mb-4">Core Capabilities</p>
+            <p className="eyebrow mb-4">How I work</p>
 
             <h2 className="text-3xl font-bold text-foreground">
               What I bring to a team
             </h2>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              A combination of technical analysis, business understanding, and
-              clear communication.
+              I like making complicated information easier to understand,
+              whether I’m exploring data or talking through a business question.
             </p>
+          </div>
+
+          <div className="mb-10 flex flex-wrap items-center gap-2" aria-label="Tools I work with">
+            <span className="mr-2 text-sm text-muted-foreground">Tools I work with</span>
+            {skills.map((skill) => (
+              <span key={skill} className="tag">{skill}</span>
+            ))}
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
@@ -314,7 +280,7 @@ function Index() {
             <p className="eyebrow mb-4">Selected Work</p>
 
             <h2 className="text-3xl font-bold text-foreground">
-              Featured Projects
+              A few things I’ve worked on
             </h2>
 
             <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -383,18 +349,18 @@ function Index() {
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
               <h2 className="text-2xl font-bold text-foreground">
-                Interested in working together?
+                Let’s start a conversation.
               </h2>
 
               <p className="mt-2 max-w-2xl text-muted-foreground">
-                I am seeking opportunities in data analytics, business
-                intelligence, and business analysis.
+                Have an analytics opportunity, an interesting project, or an AI
+                story to share? I’d love to hear from you.
               </p>
             </div>
 
             <Link to="/contact" className="btn-primary shrink-0">
               <Mail className="h-4 w-4" />
-              Contact Me
+              Say hello
             </Link>
           </div>
         </SectionWrapper>
@@ -413,7 +379,7 @@ function StrengthCard({
   description: string;
 }) {
   return (
-    <article className="content-card p-6">
+    <article className="capability-note p-2">
       <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent text-primary">
         {icon}
       </div>
