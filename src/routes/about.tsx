@@ -259,6 +259,20 @@ function AboutPage() {
         </article>
       </section>
 
+      <section className="mt-10" aria-labelledby="recognition-heading">
+        <h2 id="recognition-heading" className="mb-4 text-2xl font-bold text-foreground">Academic recognition</h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border border-border bg-card p-5">
+            <h3 className="font-semibold text-foreground">Academic Excellence Scholarship</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Gonzaga University</p>
+          </div>
+          <div className="rounded-lg border border-border bg-card p-5">
+            <h3 className="font-semibold text-foreground">President’s List and Dean’s List</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Academic honors during 2023 to 2026. Current GPA: 3.7.</p>
+          </div>
+        </div>
+      </section>
+
       <div className="mt-14 flex flex-wrap gap-3">
         <Link to="/experience" className="btn-primary">
           View My Experience
