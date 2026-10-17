@@ -118,28 +118,29 @@ function Index() {
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="max-w-3xl">
               <p className="eyebrow mb-5">
-                Data, business, and a little curiosity
+                Data Analyst and Business Analyst
               </p>
 
               <h1 className="home-greeting text-foreground">
-                Hi, I’m Annie.
+                Annie Nguyen
               </h1>
 
               <p className="mt-6 max-w-2xl text-xl font-medium leading-relaxed text-foreground md:text-2xl">
-                Curious about the numbers. Even more curious about the people.
+                A Gonzaga student exploring the connections between data, business, and people.
               </p>
 
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 I study Business Analytics, Finance, and Economics at Gonzaga
-                University, with a minor in Leadership Studies. Based in Spokane,
+                University, with a minor in Leadership Studies.
                 I’m interested in the stories behind the numbers and how they
                 help people make better decisions.
               </p>
 
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                Through projects and internships in analytics, consulting, and
-                finance, I’m learning to connect technical work with real business
-                questions. Here, you’ll find what I’ve been working on, what I’m
+                Through projects and internships in business consulting, business
+                analytics, and finance, I’m learning to connect technical work with
+                real business questions. On this website, you’ll find what I’ve
+                been working on, what I’m
                 learning, and a little about the person behind the projects.
               </p>
 
@@ -161,13 +162,13 @@ function Index() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
 
-                <a href="#about-me" className="btn-secondary">
-                  Get to know me
-                </a>
+                <Link to="/about" className="btn-secondary">
+                  About me
+                </Link>
 
                 <Link to="/contact" className="btn-secondary">
                   <Mail className="h-4 w-4" />
-                  Say hello
+                  Contact
                 </Link>
               </div>
             </div>
@@ -178,63 +179,7 @@ function Index() {
                 alt="Portrait of Annie Nguyen"
                 className="aspect-square w-full rounded-2xl object-cover object-bottom"
               />
-              <figcaption>A little glimpse of the person behind the projects.</figcaption>
             </figure>
-          </div>
-        </SectionWrapper>
-      </section>
-
-      <section id="about-me" aria-labelledby="about-me-heading" className="personal-section scroll-mt-24">
-        <SectionWrapper>
-          <div className="mb-8 max-w-2xl">
-            <p className="eyebrow mb-4">A little more about me</p>
-            <h2 id="about-me-heading" className="text-3xl font-bold text-foreground">
-              Beyond the spreadsheets
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              A few things you won’t find on my resume.
-            </p>
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {[
-              {
-                label: "Off the clock",
-                title: "Cooking & conversation",
-                description:
-                  "I enjoy cooking and getting to know people. Outside of class and work, a good conversation is one of my favorite ways to spend time.",
-              },
-              {
-                label: "Following along",
-                title: "What’s new in AI?",
-                description:
-                  "I keep up with AI news and new developments. I’m curious about what’s useful today and what might change how we work next.",
-              },
-              {
-                label: "Once you know me",
-                title: "A gentle first impression",
-                description:
-                  "I may seem quiet at first, but I’m direct and have a point of view. I enjoy conversations where we can share different perspectives.",
-              },
-              {
-                label: "A fun fact",
-                title: "10 cities. About a month.",
-                description:
-                  "I once visited ten different cities in about a month. Ask me about that trip when we meet.",
-              },
-            ].map((detail) => (
-              <article key={detail.title} className="personal-note h-full p-6 md:p-8">
-                <p className="text-sm font-medium text-primary">
-                  {detail.label}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold text-card-foreground">
-                  {detail.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {detail.description}
-                </p>
-              </article>
-            ))}
           </div>
         </SectionWrapper>
       </section>
@@ -360,7 +305,7 @@ function Index() {
 
             <Link to="/contact" className="btn-primary shrink-0">
               <Mail className="h-4 w-4" />
-              Say hello
+              Contact
             </Link>
           </div>
         </SectionWrapper>
