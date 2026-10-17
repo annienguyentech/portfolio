@@ -78,35 +78,35 @@
   --radius: 0.75rem;
 
   /*
-   * Warm paper surfaces and muted green accents
+   * White surfaces, navy text, and focused blue accents
    */
-  --background: #faf7f0;
-  --foreground: #283c35;
+  --background: #FFFFFF;
+  --foreground: #172B4D;
 
-  --card: #fffdf8;
-  --card-foreground: #283c35;
+  --card: #FFFFFF;
+  --card-foreground: #172B4D;
 
-  --popover: #fffdf8;
-  --popover-foreground: #283c35;
+  --popover: #FFFFFF;
+  --popover-foreground: #172B4D;
 
-  --primary: #365e50;
-  --primary-hover: #28483d;
+  --primary: #2457A7;
+  --primary-hover: #172B4D;
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: #eeeade;
-  --secondary-foreground: #35483d;
+  --secondary: #F5F7FA;
+  --secondary-foreground: #172B4D;
 
-  --muted: #f1eee5;
-  --muted-foreground: #5e675f;
+  --muted: #F5F7FA;
+  --muted-foreground: #536174;
 
-  --accent: #e6eddf;
-  --accent-foreground: #365e50;
+  --accent: #F5F7FA;
+  --accent-foreground: #2457A7;
 
   --destructive: oklch(0.58 0.22 27);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: #dfded2;
-  --input: #dfded2;
+  --border: #E1E6ED;
+  --input: #E1E6ED;
   --ring: var(--primary);
 
   --chart-1: var(--primary);
@@ -115,7 +115,7 @@
   --chart-4: oklch(0.7 0.12 75);
   --chart-5: oklch(0.64 0.13 320);
 
-  --sidebar: #f5f2e9;
+  --sidebar: #FFFFFF;
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
@@ -125,10 +125,10 @@
   --sidebar-ring: var(--primary);
 
   /* Existing navy utilities */
-  --navy-900: oklch(0.25 0.045 260);
-  --navy-700: oklch(0.38 0.075 257);
-  --navy-500: oklch(0.55 0.11 254);
-  --navy-50: oklch(0.97 0.01 250);
+  --navy-900: #172B4D;
+  --navy-700: #2457A7;
+  --navy-500: #2457A7;
+  --navy-50: #F5F7FA;
 }
 
 .dark {
@@ -365,7 +365,7 @@
 
 /* Personal details have room to breathe, without a dashboard of boxes. */
 .home-intro {
-  background-image: radial-gradient(ellipse at 90% 35%, #e7eddc80, transparent 55%);
+  background-image: none;
 }
 
 .home-greeting {
@@ -381,7 +381,7 @@
   border: 1px solid var(--border);
   border-radius: 1.75rem;
   background: var(--card);
-  box-shadow: 0 12px 36px #283c350a;
+  box-shadow: 0 8px 24px #00000005;
 }
 
 .portrait-frame figcaption {
@@ -397,12 +397,12 @@
 
 .personal-note {
   border-radius: 1.5rem;
-  background: #edf0e5;
+  background: var(--muted);
 }
 
 .personal-note:nth-child(2),
 .personal-note:nth-child(3) {
-  background: #f3e9df;
+  background: var(--muted);
 }
 
 .personal-note h3 {
@@ -446,7 +446,7 @@
   border: 1px solid var(--border);
   border-inline-start: 3px solid var(--company-accent);
   border-radius: 1rem;
-  background: linear-gradient(110deg, var(--company-tint), var(--card) 80%);
+  background: var(--card);
 }
 .company-name { color: var(--company-accent); }
 .company-logo {
