@@ -138,7 +138,7 @@ function Index() {
 
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 Through projects and internships in business consulting, business
-                analytics, and finance, I’m learning to connect technical work with
+                analytics, and financial analysis, I’m learning to connect technical work with
                 real business questions. On this website, you’ll find what I’ve
                 been working on, what I’m
                 learning, and a little about the person behind the projects.
