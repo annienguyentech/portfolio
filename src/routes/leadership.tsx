@@ -162,16 +162,6 @@ function LeadershipPage() {
             <p className="mt-6 border-t border-border pt-5 font-medium leading-relaxed text-primary">
               {example.outcome}
             </p>
-            {example.title === "Head of Event Coordination" && (
-              <a
-                className="text-link mt-4"
-                href="https://www.instagram.com/gu_vsa/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                VSA on Instagram ↗
-              </a>
-            )}
             {example.title === "Comprehensive Leadership Program" && (
               <a
                 className="text-link mt-4"
